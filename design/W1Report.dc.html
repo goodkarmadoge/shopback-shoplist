@@ -98,7 +98,8 @@ a{color:#1D4ED8}a:hover{color:#1E3A8A}
 <div style="width: 60px; height: 60px; border-radius: 14px; overflow: hidden; flex: none; background: #F3F4F6; display: flex; align-items: center; justify-content: center">
 <sc-if value="{{ it.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ it.img }}" alt="{{ it.short }}" style="width: 60px; height: 60px; object-fit: cover"></sc-if>
 <sc-if value="{{ it.isFryer }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h12l1 13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"></path><path d="M9 3h6M8 10h8"></path><circle cx="12" cy="15" r="2"></circle></svg></sc-if>
-<sc-if value="{{ it.isEspresso }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B21A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"></path><path d="M16 11h2a2 2 0 0 1 0 4h-2"></path><path d="M8 3v3M11 3v3"></path></svg></sc-if>
+<sc-if value="{{ it.isKeyboard }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B21A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"></rect><path d="M6 11h.01M10 11h.01M14 11h.01M18 11h.01M7 14h10"></path></svg></sc-if>
+<sc-if value="{{ it.isPurifier }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="3"></rect><path d="M9 7h6M9 10h6M9 13h6"></path><circle cx="12" cy="17" r="1"></circle></svg></sc-if>
 </div>
 <div style="flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0">
 <span style="font-size: 15px; font-weight: 700; line-height: 1.25">{{ it.name }}</span>
@@ -177,7 +178,7 @@ var LIST = {
 'Wish List': ['#6B21A8', '#F3E8FF']
 };
 var RAW = [
-{ name: 'Floor lamp, LED arc', short: 'Floor lamp', list: 'Buy Now', img: '/_blob/7199813906b95561fcfa8d0beed0ae10', q: 'led arc floor lamp', target: 150,
+{ name: 'Air purifier, HEPA', short: 'Air purifier', list: 'Buy Now', icon: 'purifier', q: 'hepa air purifier', target: 150,
 v: [ { s: 'shopee', p: 169, p1: 169, p7: 172, r: 0.16, r1: 0.06, r7: 0.06, cap: 30, boost: true },
 { s: 'lazada', p: 159, p1: 159, p7: 162, r: 0.04 },
 { s: 'amazon', p: 165, p1: 165, p7: 168, r: 0.03 } ],
@@ -192,16 +193,16 @@ v: [ { s: 'shopee', p: 189, p1: 189, p7: 199, vc: 11, r: 0.06, cap: 10 },
 { s: 'lazada', p: 185, p1: 185, p7: 189, r: 0.04 },
 { s: 'amazon', p: 179, p1: 179, p7: 189, r: 0.03 } ],
 h: [190,190,189,188,188,187,186,186,185,185,184,183,183,182,182,182,181,181,180,180,179,179,0,180,178,177,175,174,0,0] },
-{ name: 'Sonos soundbar, compact', short: 'Soundbar', list: 'Buy Now', img: '/_blob/562337d77cd1e2c0b7e58fed67bc2a8e', q: 'sonos soundbar', target: 800,
+{ name: 'Sonos soundbar, compact', short: 'Soundbar', list: 'Wish List', img: '/_blob/562337d77cd1e2c0b7e58fed67bc2a8e', q: 'sonos soundbar', target: 800,
 v: [ { s: 'amazon', p: 899, p1: 899, p7: 949, r: 0.08, cap: 60 },
 { s: 'lazada', p: 889, p1: 889, p7: 909, r: 0.04, cap: 30 },
 { s: 'shopee', p: 919, p1: 919, p7: 939, r: 0.07, cap: 40 } ],
 h: [905,905,900,899,899,895,895,890,889,889,885,885,882,880,880,879,879,879,879,880,879,879,0,875,869,859,849,845,0,0] },
-{ name: 'Compact espresso machine', short: 'Espresso', list: 'Wish List', icon: 'espresso', q: 'compact espresso machine', target: 380,
-v: [ { s: 'shopee', p: 449, p1: 449, p7: 449, vc: 20, r: 0.07, cap: 25 },
-{ s: 'lazada', p: 419, p1: 419, p7: 409, r: 0.04, cap: 20 },
-{ s: 'amazon', p: 425, p1: 425, p7: 425, r: 0.03 } ],
-h: [415,414,414,413,412,410,408,405,402,400,398,396,395,394,393,393,392,393,392,392,393,392,0,395,397,399,400,401,0,0] }
+{ name: 'Mechanical keyboard, wireless', short: 'Keyboard', list: 'Wish List', icon: 'keyboard', q: 'mechanical keyboard', target: 210,
+v: [ { s: 'shopee', p: 269, p1: 269, p7: 259, vc: 20, vc7: 20, r: 0.07, cap: 25 },
+{ s: 'lazada', p: 249, p1: 249, p7: 245, r: 0.04, cap: 20 },
+{ s: 'amazon', p: 255, p1: 255, p7: 255, r: 0.03 } ],
+h: [252,251,250,249,248,246,244,242,240,238,236,234,232,230,229,228,227,226,225,224,223,222,0,226,232,238,243,241,0,0] }
 ];
 function r2(n) { return Math.round(n * 100) / 100; }
 function money(n) { return '$' + Math.abs(n).toFixed(2); }
@@ -272,7 +273,7 @@ var deltaTxt = delta < 0 ? money(delta) + ' lower than ' + since : delta > 0 ? m
 var lc = LIST[it.list];
 return {
 name: it.name, short: it.short, list: it.list, listFg: lc[0], listBg: lc[1],
-img: it.img || '', hasImg: !!it.img, isFryer: it.icon === 'fryer', isEspresso: it.icon === 'espresso',
+img: it.img || '', hasImg: !!it.img, isFryer: it.icon === 'fryer', isPurifier: it.icon === 'purifier', isKeyboard: it.icon === 'keyboard',
 rank: rank, verdict: VERD[rank][0], vFg: VERD[rank][1], vBg: VERD[rank][2],
 pay: t.c.pay, cb: t.c.cb, saved: r2(maxPay - t.c.pay),
 payStr: money(t.c.pay), bestStore: S[t.v.s].name, bestKey: t.v.s,
