@@ -173,9 +173,17 @@
     var active = document.activeElement;
     var focusId = active && screenEl.contains(active) ? active.id : '';
     var caret = focusId && typeof active.selectionStart === 'number' ? active.selectionStart : null;
+    var scrolls = [];
+    screenEl.querySelectorAll('[id]').forEach(function (el) {
+      if (el.scrollLeft || el.scrollTop) scrolls.push([el.id, el.scrollLeft, el.scrollTop]);
+    });
     screenEl.textContent = '';
     renderComponent(root, screenEl);
     scroller.scrollTop = top;
+    scrolls.forEach(function (sc) {
+      var el = document.getElementById(sc[0]);
+      if (el) { el.scrollLeft = sc[1]; el.scrollTop = sc[2]; }
+    });
     if (focusId) {
       var again = document.getElementById(focusId);
       if (again) {
