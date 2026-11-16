@@ -170,9 +170,19 @@
     if (!root || !screenEl) return;
     var scroller = screenEl.parentNode;
     var top = scroller.scrollTop;
+    var active = document.activeElement;
+    var focusId = active && screenEl.contains(active) ? active.id : '';
+    var caret = focusId && typeof active.selectionStart === 'number' ? active.selectionStart : null;
     screenEl.textContent = '';
     renderComponent(root, screenEl);
     scroller.scrollTop = top;
+    if (focusId) {
+      var again = document.getElementById(focusId);
+      if (again) {
+        again.focus();
+        if (caret !== null) { try { again.setSelectionRange(caret, caret); } catch (err) { /* not a text field */ } }
+      }
+    }
   }
 
   function cleanTitle(t) {

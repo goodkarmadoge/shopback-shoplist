@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>First open: start your ShopList</title>
+<title>First open: a blank ShopList and adding the first item</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -14,60 +14,141 @@ a{color:#1D4ED8}a:hover{color:#1E3A8A}
 </style>
 </helmet>
 <div style="width: 390px; height: 844px; box-sizing: border-box; background: #F5F5F5; color: #1F2937; font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow: hidden">
-<div style="padding: 24px 24px 4px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">
-<img src="img/spark.svg" alt="" width="26" height="26" style="flex: none">
-<h1 style="margin: 0; font-size: 25px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.2">What’s on your shopping mind?</h1>
-<p style="margin: 0; font-size: 15px; color: #4B5563; line-height: 1.4">Tap anything that fits. I’ll sort it and start tracking prices.</p>
+<div style="background: #FFFFFF; padding: 8px 8px 8px 16px; display: flex; align-items: center; gap: 8px; flex: none">
+<h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.3px">ShopList</h1>
+<span style="font-size: 11px; font-weight: 700; color: #FFFFFF; background: #1570EF; padding: 2px 7px; border-radius: 6px">Beta</span>
+<span style="flex: 1"></span>
+<span style="font-size: 14px; color: #4B5563; padding-right: 8px">{{ countLabel }}</span>
+<span style="width: 1px; height: 44px"></span>
 </div>
-<div style="flex: 1; padding: 12px 20px; display: flex; flex-direction: column; gap: 18px">
-<div style="display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; align-items: center; gap: 8px">
-<span aria-hidden="true" style="font-size: 18px">🛒</span>
-<h2 style="margin: 0; font-size: 16px; font-weight: 700">Buy Now</h2>
+<div style="flex: 1; min-height: 0; overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ true }}">
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; padding: 0 20px">
+<img src="img/karma.svg" alt="" width="104" height="104">
+<h2 style="margin: 6px 0 0; font-size: 22px; font-weight: 700; letter-spacing: -0.2px">Your ShopList is empty</h2>
+<p style="margin: 0; font-size: 15px; color: #4B5563; line-height: 1.4">Type anything you want to buy. One word is enough, and Karma finds the best price and Cashback.</p>
 </div>
+</sc-if>
+<sc-if value="{{ hasItems }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; align-items: center; gap: 8px"><img src="img/karma.svg" alt="" width="28" height="28" style="flex: none; border-radius: 50%; background: #FFE5EC"><span style="font-size: 14px; font-weight: 700">Karma</span><span style="font-size: 13px; color: #4B5563">{{ karmaLine }}</span></div>
+<div style="background: #FFFFFF; border: 1px solid #EEF0F2; border-radius: 16px; display: flex; flex-direction: column">
+<sc-for list="{{ items }}" as="it" hint-placeholder-count="2">
+<div style="padding: 10px 6px 10px 14px; display: flex; align-items: center; gap: 12px; border-top: {{ it.border }}">
+<span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 12px; background: #F0F1F3; flex: none; display: flex; align-items: center; justify-content: center; font-size: 22px">{{ it.e }}</span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 700">{{ it.t }}</span>
+<span style="font-size: 13px; color: #4B5563">{{ it.tag }} · tracking prices</span>
+</div>
+<button aria-label="{{ it.removeLabel }}" onClick="{{ it.remove }}" style="width: 44px; height: 44px; border: none; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+</sc-for>
+</div>
+<a href="T1Capture.dc.html" style="height: 52px; border-radius: 26px; background: #111111; color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none; flex: none">{{ cta }}</a>
+</sc-if>
+</div>
+<div style="background: #FFFFFF; border-radius: 24px 24px 0 0; box-shadow: 0 -2px 14px rgba(17,24,39,0.06); padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 10px; flex: none">
+<sc-if value="{{ showPopular }}" hint-placeholder-val="{{ true }}">
+<span style="font-size: 13px; font-weight: 700; padding: 0 2px">Recommended for you</span>
 <div style="display: flex; flex-wrap: wrap; gap: 8px">
-<button style="height: 44px; padding: 0 14px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 700; font-family: inherit; display: flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>Travel adapter</button>
-<button style="height: 44px; padding: 0 14px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 700; font-family: inherit; display: flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>Air fryer</button>
-<button style="height: 44px; padding: 0 14px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit">Running shoes</button>
-<button style="height: 44px; padding: 0 14px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit">Air purifier</button>
+<sc-for list="{{ popular }}" as="p" hint-placeholder-count="6">
+<button onClick="{{ p.add }}" style="height: 44px; padding: 0 14px; border: 1px solid #E5E7EB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit; display: flex; align-items: center; gap: 6px; cursor: pointer"><span aria-hidden="true">{{ p.e }}</span>{{ p.t }}</button>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ typing }}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 13px; font-weight: 700; padding: 0 2px">Recommended searches</span>
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{ matches }}" as="m" hint-placeholder-count="3">
+<button onClick="{{ m.add }}" style="min-height: 48px; border: none; border-top: {{ m.border }}; background: none; padding: 4px 2px; display: flex; align-items: center; gap: 10px; font-family: inherit; color: #1F2937; text-align: left; cursor: pointer">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 10px; background: #F0F1F3; flex: none; display: flex; align-items: center; justify-content: center; font-size: 18px">{{ m.e }}</span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 600">{{ m.t }}</span><span style="font-size: 12px; color: #4B5563">{{ m.hint }}</span></span>
+<span style="font-size: 13px; font-weight: 700; color: #1D4ED8; padding: 0 6px">Add</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+<div style="display: flex; align-items: center; gap: 10px">
+<button aria-label="Add a photo" style="width: 48px; height: 48px; border: none; border-radius: 24px; background: #F0F1F3; display: flex; align-items: center; justify-content: center; flex: none">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+</button>
+<div style="flex: 1; min-width: 0; height: 48px; border-radius: 24px; background: #F0F1F3; display: flex; align-items: center; padding: 0 5px 0 16px; gap: 6px">
+<label for="seedq" style="position: absolute; width: 1px; height: 1px; overflow: hidden">Add an item to your ShopList</label>
+<input id="seedq" type="text" autocomplete="off" value="{{ q }}" onInput="{{ onType }}" onKeydown="{{ onKey }}" placeholder="Add anything, like “air fryer”" style="flex: 1; min-width: 0; height: 44px; border: none; background: none; outline: none; font-size: 15px; font-family: inherit; color: #1F2937">
+<button aria-label="Add to ShopList" onClick="{{ addTyped }}" style="width: 38px; height: 38px; border: none; background: #111111; border-radius: 19px; display: flex; align-items: center; justify-content: center; flex: none; cursor: pointer">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+</button>
 </div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; align-items: center; gap: 8px">
-<span aria-hidden="true" style="font-size: 18px">⭐</span>
-<h2 style="margin: 0; font-size: 16px; font-weight: 700">Wish List</h2>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<button style="height: 44px; padding: 0 14px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 700; font-family: inherit; display: flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>Big-screen TV</button>
-<button style="height: 44px; padding: 0 14px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit">Soundbar</button>
-<button style="height: 44px; padding: 0 14px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit">Mechanical keyboard</button>
-<button style="height: 44px; padding: 0 14px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit">Specialty bag</button>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; align-items: center; gap: 8px">
-<span aria-hidden="true" style="font-size: 18px">🔁</span>
-<h2 style="margin: 0; font-size: 16px; font-weight: 700">Recurring Purchases</h2>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<button style="height: 44px; padding: 0 14px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 700; font-family: inherit; display: flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>Dog food</button>
-<button style="height: 44px; padding: 0 14px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit">Coffee pods</button>
-<button style="height: 44px; padding: 0 14px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 700; font-family: inherit; display: flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>Laundry detergent</button>
-<button style="height: 44px; padding: 0 14px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit">Diapers</button>
-<button style="height: 44px; padding: 0 14px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 600; font-family: inherit">Water filters</button>
-</div>
-</div>
-</div>
-<div style="background: #FFFFFF; border-radius: 24px 24px 0 0; box-shadow: 0 -2px 14px rgba(17,24,39,0.06); padding: 14px 20px 16px; display: flex; flex-direction: column; gap: 2px">
-<button style="height: 52px; border: none; border-radius: 26px; background: #111111; color: #FFFFFF; font-size: 16px; font-weight: 700; font-family: inherit">Start my ShopList · 5 items</button>
-<a href="V2Capture.dc.html" style="align-self: center; font-size: 14px; font-weight: 600; padding: 12px; color: #1D4ED8">Or say it in your own words</a>
 </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
+getS() { return this.state || { q: '', items: [] }; }
 renderVals() {
-return {};
+var self = this;
+var s = this.getS();
+var TAG = { buy: '🛒 Buy Now', wish: '⭐ Wish List', rec: '🔁 Recurring' };
+var C = [
+['Air fryer', '🍟', 'buy'], ['Air purifier', '💨', 'buy'], ['Air fryer liners', '🧻', 'rec'], ['Travel adapter', '🔌', 'buy'],
+['Running shoes', '👟', 'buy'], ['School shoes', '👞', 'buy'], ['Phone case', '📱', 'buy'], ['Rice cooker', '🍚', 'buy'],
+['Robot vacuum', '🤖', 'wish'], ['Vacuum cleaner', '🧹', 'buy'], ['Big-screen TV', '📺', 'wish'], ['TV wall mount', '🔩', 'buy'],
+['Soundbar', '🔊', 'wish'], ['Sound system', '🎶', 'wish'], ['Mechanical keyboard', '⌨️', 'wish'], ['Specialty bag', '👜', 'wish'],
+['Laptop', '💻', 'wish'], ['Laptop stand', '🖥️', 'buy'], ['Headphones', '🎧', 'wish'], ['Game console', '🎮', 'wish'],
+['Dog food', '🐶', 'rec'], ['Dog treats', '🦴', 'rec'], ['Cat food', '🐱', 'rec'], ['Coffee pods', '☕', 'rec'], ['Coffee machine', '☕', 'wish'],
+['Laundry detergent', '🧺', 'rec'], ['Diapers', '🍼', 'rec'], ['Water filters', '💧', 'rec'], ['Groceries', '🥦', 'rec'], ['Shampoo', '🧴', 'rec'],
+['Sunscreen', '🧴', 'rec'], ['Luggage', '🧳', 'buy'], ['Backpack', '🎒', 'buy'], ['Desk lamp', '💡', 'buy'], ['Mattress', '🛏️', 'wish']
+];
+var POPULAR = ['Air fryer', 'Running shoes', 'Big-screen TV', 'Soundbar', 'Dog food', 'Coffee pods', 'Travel adapter', 'Laundry detergent'];
+var have = {};
+s.items.forEach(function (it) { have[it.t.toLowerCase()] = true; });
+function add(entry) {
+return function () {
+var cur = self.getS();
+if (cur.items.some(function (i) { return i.t.toLowerCase() === entry[0].toLowerCase(); })) { self.setState({ q: '', items: cur.items }); return; }
+self.setState({ q: '', items: cur.items.concat([{ t: entry[0], e: entry[1], s: entry[2] }]) });
+};
+}
+var q = s.q.trim();
+var ql = q.toLowerCase();
+var matches = [];
+if (q) {
+C.forEach(function (c) { if (matches.length < 4 && !have[c[0].toLowerCase()] && c[0].toLowerCase().indexOf(ql) >= 0) matches.push(c); });
+var exact = C.some(function (c) { return c[0].toLowerCase() === ql; });
+if (!exact && !have[ql]) matches.push([q.charAt(0).toUpperCase() + q.slice(1), '🔎', 'buy', true]);
+}
+var typed = function () {
+var cur = self.getS();
+var t = cur.q.trim();
+if (!t) return;
+var hit = C.filter(function (c) { return c[0].toLowerCase() === t.toLowerCase(); })[0];
+add(hit || [t.charAt(0).toUpperCase() + t.slice(1), '🛍️', 'buy'])();
+};
+var n = s.items.length;
+return {
+q: s.q,
+isEmpty: n === 0,
+hasItems: n > 0,
+countLabel: n === 0 ? '' : n + (n === 1 ? ' item' : ' items'),
+karmaLine: n === 1 ? 'Added and sorted. Add more, or start.' : 'Sorted ' + n + ' items for you.',
+cta: 'Start my ShopList · ' + n + (n === 1 ? ' item' : ' items'),
+items: s.items.map(function (it, i) {
+return { t: it.t, e: it.e, tag: TAG[it.s], border: i === 0 ? 'none' : '1px solid #EEF0F2', removeLabel: 'Remove ' + it.t,
+remove: function () { var cur = self.getS(); self.setState({ q: cur.q, items: cur.items.filter(function (x) { return x.t !== it.t; }) }); } };
+}),
+showPopular: !q,
+typing: !!q,
+popular: POPULAR.filter(function (p) { return !have[p.toLowerCase()]; }).slice(0, 6).map(function (p) {
+var c = C.filter(function (x) { return x[0] === p; })[0];
+return { t: c[0], e: c[1], add: add(c) };
+}),
+matches: matches.map(function (c, i) {
+return { t: c[3] ? 'Add “' + c[0] + '”' : c[0], e: c[1], hint: c[3] ? 'As you typed it. Karma will sort it.' : 'Goes to ' + TAG[c[2]], border: i === 0 ? 'none' : '1px solid #EEF0F2', add: add(c[3] ? [c[0], '🛍️', 'buy'] : c) };
+}),
+onType: function (e) { self.setState({ q: e.target.value, items: self.getS().items }); },
+onKey: function (e) { if (e.key === 'Enter') typed(); },
+addTyped: typed
+};
 }
 }
 </script>

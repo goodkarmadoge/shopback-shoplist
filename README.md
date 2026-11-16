@@ -8,13 +8,13 @@ It is a static site with no build step and no dependencies.
 
 ## Flows
 
-1. **Discover and onboard:** ShopBack home icon and promo card, welcome with the tutorial video, onboarding, seeding lists, capture, coach marks.
+1. **Discover and onboard:** ShopBack home icon and promo card, welcome with the tutorial video, onboarding, a blank ShopList where you type to add your first items, capture, coach marks.
 2. **Everyday ShopList:** Buy Now details and picks, Wish List and the Cashback Wish Jar, Recurring restock.
 3. **Karma does the legwork:** morning briefing, approve, bought.
 4. **Price Watchlist Update:** daily or weekly price check with the best price after Cashback per store, item detail, settings, notifications.
 5. **Save from any store:** the ShopBack browser extension's “Save to ShopList” picker, and how the item lands in the app.
 
-Interactive screens: the tutorial video widget, the Daily / Weekly report switch, the report settings and the extension's list picker.
+Interactive screens: the blank ShopList (type to add, with recommended searches), the tutorial video widget, the Daily / Weekly report switch, the report settings and the extension's list picker.
 
 ## How it is built
 
