@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ShopList icon button and promo card states</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="width: 560px; height: 520px; box-sizing: border-box; background: #FFFFFF; color: #1F2937; font-family: -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h1 style="margin: 0; font-size: 20px; font-weight: 800">ShopList icon button</h1>
+<span style="font-size: 13px; color: #4B5563">Sits in the home quick-access row, middle slot.</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<div style="background: #F5F5F5; border-radius: 16px; padding: 18px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #D92D2A; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 3px #FDECEC"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2"></path><circle cx="5" cy="18" r="1"></circle></svg></span>
+<span style="font-size: 12px; font-weight: 800; color: #B91C1C">ShopList</span>
+<span style="position: absolute; top: -8px; right: -14px; font-size: 10px; font-weight: 800; color: #FFFFFF; background: #1F2937; padding: 2px 6px; border-radius: 8px; border: 2px solid #F5F5F5">New</span>
+</div>
+<span style="font-size: 13px; font-weight: 700">New</span>
+<span style="font-size: 12px; color: #4B5563; text-align: center; line-height: 1.35">Until the first list is made. Red tile stands out once.</span>
+</div>
+<div style="background: #F5F5F5; border-radius: 16px; padding: 18px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E5E7EB; box-sizing: border-box; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D92D2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2"></path><circle cx="5" cy="18" r="1"></circle></svg></span>
+<span style="font-size: 12px; font-weight: 600">ShopList</span>
+<span style="position: absolute; top: -8px; right: -8px; min-width: 22px; height: 22px; box-sizing: border-box; font-size: 12px; font-weight: 800; color: #FFFFFF; background: #D92D2A; border-radius: 11px; border: 2px solid #F5F5F5; display: flex; align-items: center; justify-content: center">3</span>
+</div>
+<span style="font-size: 13px; font-weight: 700">Needs your yes</span>
+<span style="font-size: 12px; color: #4B5563; text-align: center; line-height: 1.35">Count of agent items waiting. Never counts offers.</span>
+</div>
+<div style="background: #F5F5F5; border-radius: 16px; padding: 18px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E5E7EB; box-sizing: border-box; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2"></path><circle cx="5" cy="18" r="1"></circle></svg></span>
+<span style="font-size: 12px; font-weight: 600">ShopList</span>
+</div>
+<span style="font-size: 13px; font-weight: 700">All caught up</span>
+<span style="font-size: 12px; color: #4B5563; text-align: center; line-height: 1.35">Same as the other quick-access icons.</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 800">After setup, the promo card becomes a list card</h2>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 8px rgba(31,41,55,0.08)">
+<div style="width: 44px; height: 44px; border-radius: 14px; background: #FDECEC; flex: none; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D92D2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 800">Your ShopList: 3 things need a yes</span>
+<span style="font-size: 13px; color: #4B5563">Dog food restock · soundbar at a 90-day low · lamp Boosted</span>
+</div>
+<a href="V2Agent.dc.html" style="height: 44px; padding: 0 16px; border-radius: 22px; background: #1F2937; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; text-decoration: none; flex: none">Review</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":560,"height":520}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

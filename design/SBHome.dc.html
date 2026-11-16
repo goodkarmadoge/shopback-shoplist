@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ShopBack home with ShopList entry points</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F5F5F5; color: #1F2937; font-family: -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+<div style="background: #FFFFFF; padding: 20px 16px 14px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 20px; font-weight: 800">Hi, Sam</span>
+<button aria-label="Search" style="width: 44px; height: 44px; border: 1px solid #D1D5DB; background: #FFFFFF; border-radius: 22px; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+</button>
+</div>
+<div style="background: #F5F5F5; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 13px; color: #4B5563">Lifetime Cashback</span>
+<span style="font-size: 22px; font-weight: 800">$500.00</span>
+</div>
+</div>
+<div style="background: #FFFFFF; padding: 4px 8px 14px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; border-bottom: 1px solid #E5E7EB">
+<button style="border: none; background: none; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: inherit; color: #1F2937; min-height: 44px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #F5F5F5; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></span>
+<span style="font-size: 12px; font-weight: 600">Upsized</span>
+</button>
+<button style="border: none; background: none; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: inherit; color: #1F2937; min-height: 44px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #F5F5F5; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z"></path><path d="M14 8v10"></path></svg></span>
+<span style="font-size: 12px; font-weight: 600">Vouchers</span>
+</button>
+<a href="O1Welcome.dc.html" aria-label="ShopList, new" style="padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 6px; color: #1F2937; text-decoration: none; position: relative">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #D92D2A; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 3px #FDECEC"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2"></path><circle cx="5" cy="18" r="1"></circle></svg></span>
+<span style="font-size: 12px; font-weight: 800; color: #B91C1C">ShopList</span>
+<span style="position: absolute; top: -2px; right: 4px; font-size: 10px; font-weight: 800; color: #FFFFFF; background: #1F2937; padding: 2px 6px; border-radius: 8px; border: 2px solid #FFFFFF">New</span>
+</a>
+<button style="border: none; background: none; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: inherit; color: #1F2937; min-height: 44px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #F5F5F5; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg></span>
+<span style="font-size: 12px; font-weight: 600">Pay</span>
+</button>
+<button style="border: none; background: none; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: inherit; color: #1F2937; min-height: 44px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #F5F5F5; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="4"></rect><path d="M8 11v4M6 13h4M15.5 12h.01M18 14h.01"></path></svg></span>
+<span style="font-size: 12px; font-weight: 600">Play</span>
+</button>
+</div>
+<div style="flex: 1; padding: 14px 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(31,41,55,0.08); display: flex; flex-direction: column">
+<div style="background: #FDECEC; padding: 16px 16px 14px; display: flex; gap: 14px; align-items: center; position: relative">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 6px; padding-right: 28px">
+<span style="font-size: 11px; font-weight: 800; color: #B91C1C; letter-spacing: 0.6px">NEW ON SHOPBACK</span>
+<h2 style="margin: 0; font-size: 21px; font-weight: 800; line-height: 1.15; letter-spacing: -0.3px">Meet ShopList</h2>
+<p style="margin: 0; font-size: 14px; line-height: 1.4; color: #1F2937">One list for everything you plan to buy. Your agent finds the Cashback.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 5px; flex: none; width: 112px" aria-hidden="true">
+<span style="background: #FFFFFF; border-radius: 10px; padding: 6px 8px; font-size: 11px; font-weight: 700; color: #046C4E; display: flex; align-items: center; gap: 5px; box-shadow: 0 1px 3px rgba(31,41,55,0.12)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#046C4E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"></path><path d="M3 11V9a3 3 0 0 1 3-3h15"></path></svg>Dog food</span>
+<span style="background: #FFFFFF; border-radius: 10px; padding: 6px 8px; font-size: 11px; font-weight: 700; color: #1F2937; display: flex; align-items: center; gap: 5px; box-shadow: 0 1px 3px rgba(31,41,55,0.12); margin-left: 10px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"></path></svg>Soundbar</span>
+<span style="background: #FFFFFF; border-radius: 10px; padding: 6px 8px; font-size: 11px; font-weight: 700; color: #6B21A8; display: flex; align-items: center; gap: 5px; box-shadow: 0 1px 3px rgba(31,41,55,0.12)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B21A8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg>Espresso</span>
+</div>
+<button aria-label="Dismiss" style="position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; border: none; background: none; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
+<div style="padding: 12px 16px 14px; display: flex; gap: 8px; align-items: center">
+<a href="O1Welcome.dc.html" style="flex: 1; height: 44px; border-radius: 22px; background: #D92D2A; color: #FFFFFF; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">Start my list</a>
+<a href="O2Player.dc.html" style="height: 44px; padding: 0 14px; border-radius: 22px; border: 1.5px solid #1F2937; color: #1F2937; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 6px; text-decoration: none; box-sizing: border-box">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="#1F2937"><path d="M7 4l13 8-13 8z"></path></svg>45-sec tour</a>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; padding-top: 4px">
+<span style="font-size: 18px; font-weight: 800">Boosted stores</span>
+<a href="#" style="font-size: 15px; font-weight: 600; padding: 8px 0">See all</a>
+</div>
+<div style="display: flex; gap: 10px">
+<div style="flex: 1; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px">
+<span style="font-size: 15px; font-weight: 800">Shopee</span>
+<span style="font-size: 12px; color: #4B5563; text-align: center">Up to 16% Cashback</span>
+</div>
+<div style="flex: 1; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px">
+<span style="font-size: 15px; font-weight: 800">Klook</span>
+<span style="font-size: 12px; color: #4B5563; text-align: center">Up to 25% Cashback</span>
+</div>
+<div style="flex: 1; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px">
+<span style="font-size: 15px; font-weight: 800">Agoda</span>
+<span style="font-size: 12px; color: #4B5563; text-align: center">Up to 20% Cashback</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">Today’s quests</span>
+<span style="font-size: 13px; color: #4B5563">2 of 3 done</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border-top: 1px solid #E5E7EB; height: 64px; display: flex; align-items: center; justify-content: space-around; flex: none">
+<button style="min-width: 72px; height: 44px; border: none; background: none; font-size: 12px; font-weight: 800; color: #D92D2A; font-family: inherit">Home</button>
+<a href="O1Welcome.dc.html" style="min-width: 72px; height: 44px; font-size: 12px; font-weight: 600; color: #4B5563; display: flex; align-items: center; justify-content: center; text-decoration: none">ShopList</a>
+<button style="min-width: 72px; height: 44px; border: none; background: none; font-size: 12px; font-weight: 600; color: #4B5563; font-family: inherit">Play</button>
+<button style="min-width: 72px; height: 44px; border: none; background: none; font-size: 12px; font-weight: 600; color: #4B5563; font-family: inherit">Account</button>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

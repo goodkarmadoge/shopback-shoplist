@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Price Watchlist Update</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="width: 390px; height: 3300px; box-sizing: border-box; background: #F5F5F5; color: #1F2937; font-family: -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+<div style="background: #FFFFFF; padding: 10px 8px 14px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid #E5E7EB">
+<div style="display: flex; align-items: center; gap: 4px">
+<a href="V2Home.dc.html" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column; flex: 1">
+<h1 style="margin: 0; font-size: 19px; font-weight: 800">Price Watchlist Update</h1>
+<span style="font-size: 12px; color: #4B5563">{{ stamp }}</span>
+</div>
+<a href="W3Schedule.dc.html" aria-label="Report settings" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg>
+</a>
+</div>
+<div role="group" aria-label="Report period" style="margin: 0 8px; background: #F3F4F6; border-radius: 24px; padding: 4px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px">
+<sc-if value="{{ isDaily }}" hint-placeholder-val="{{ true }}">
+<button aria-pressed="true" onClick="{{ setDaily }}" style="height: 44px; border: none; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(31,41,55,0.15); font-size: 14px; font-weight: 800; color: #1F2937; font-family: inherit; cursor: pointer">Daily</button>
+<button aria-pressed="false" onClick="{{ setWeekly }}" style="height: 44px; border: none; border-radius: 22px; background: none; font-size: 14px; font-weight: 600; color: #4B5563; font-family: inherit; cursor: pointer">Weekly</button>
+</sc-if>
+<sc-if value="{{ isWeekly }}" hint-placeholder-val="{{ false }}">
+<button aria-pressed="false" onClick="{{ setDaily }}" style="height: 44px; border: none; border-radius: 22px; background: none; font-size: 14px; font-weight: 600; color: #4B5563; font-family: inherit; cursor: pointer">Daily</button>
+<button aria-pressed="true" onClick="{{ setWeekly }}" style="height: 44px; border: none; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(31,41,55,0.15); font-size: 14px; font-weight: 800; color: #1F2937; font-family: inherit; cursor: pointer">Weekly</button>
+</sc-if>
+</div>
+</div>
+<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 14px">
+<div style="background: #1F2937; color: #FFFFFF; border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 10px; align-items: flex-start">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCA5A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 18px; font-weight: 800; line-height: 1.25">{{ headline }}</span>
+<span style="font-size: 13px; color: #D1D5DB; line-height: 1.4">{{ subline }}</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="background: rgba(255,255,255,0.08); border-radius: 14px; padding: 10px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 22px; font-weight: 800">{{ goodCount }}</span>
+<span style="font-size: 11px; color: #D1D5DB; line-height: 1.3">good time to buy</span>
+</div>
+<div style="background: rgba(255,255,255,0.08); border-radius: 14px; padding: 10px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 22px; font-weight: 800; color: #6EE7B7">{{ cbTotal }}</span>
+<span style="font-size: 11px; color: #D1D5DB; line-height: 1.3">Cashback on the best picks</span>
+</div>
+<div style="background: rgba(255,255,255,0.08); border-radius: 14px; padding: 10px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 22px; font-weight: 800">{{ savedTotal }}</span>
+<span style="font-size: 11px; color: #D1D5DB; line-height: 1.3">less than the priciest store</span>
+</div>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<h2 style="margin: 0; font-size: 16px; font-weight: 800">Best price, {{ changeTitle }}</h2>
+<span style="font-size: 12px; color: #4B5563">after Cashback</span>
+</div>
+<div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #4B5563; padding-left: 92px"><span>Lower</span><span>Higher</span></div>
+<sc-for list="{{ items }}" as="row" hint-placeholder-count="5">
+<div style="display: flex; align-items: center; gap: 8px; min-height: 30px">
+<span style="width: 84px; font-size: 13px; font-weight: 600; flex: none">{{ row.short }}</span>
+<div style="flex: 1; display: flex; align-items: center; height: 18px" aria-hidden="true">
+<div style="flex: 1; display: flex; justify-content: flex-end; height: 100%"><div style="width: {{ row.leftW }}%; height: 100%; background: #046C4E; border-radius: 4px 0 0 4px"></div></div>
+<div style="width: 2px; height: 26px; background: #9CA3AF; flex: none"></div>
+<div style="flex: 1; display: flex; height: 100%"><div style="width: {{ row.rightW }}%; height: 100%; background: #C2410C; border-radius: 0 4px 4px 0"></div></div>
+</div>
+<span style="width: 62px; text-align: right; font-size: 13px; font-weight: 700; flex: none; color: {{ row.deltaFg }}">{{ row.deltaShort }}</span>
+</div>
+</sc-for>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 800">Which store wins after Cashback</h2>
+<div style="display: flex; height: 36px; border-radius: 10px; overflow: hidden; gap: 2px" role="img" aria-label="{{ winsLabel }}">
+<sc-for list="{{ wins }}" as="w" hint-placeholder-count="3">
+<div style="width: {{ w.pct }}%; background: {{ w.bg }}; color: {{ w.fg }}; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden">{{ w.label }}</div>
+</sc-for>
+</div>
+<div style="background: #FEF3C7; border-radius: 12px; padding: 10px 12px; display: flex; gap: 10px; align-items: center">
+<span style="font-size: 26px; font-weight: 800; color: #92400E">{{ flips }}</span>
+<span style="font-size: 13px; color: #78350F; line-height: 1.4">of {{ count }} items: the store with the lowest sticker price is not the cheapest once Cashback is counted.</span>
+</div>
+</div>
+<sc-for list="{{ items }}" as="it" hint-placeholder-count="5">
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 12px; align-items: center">
+<div style="width: 60px; height: 60px; border-radius: 14px; overflow: hidden; flex: none; background: #F3F4F6; display: flex; align-items: center; justify-content: center">
+<sc-if value="{{ it.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ it.img }}" alt="{{ it.short }}" style="width: 60px; height: 60px; object-fit: cover"></sc-if>
+<sc-if value="{{ it.isFryer }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h12l1 13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"></path><path d="M9 3h6M8 10h8"></path><circle cx="12" cy="15" r="2"></circle></svg></sc-if>
+<sc-if value="{{ it.isEspresso }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B21A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"></path><path d="M16 11h2a2 2 0 0 1 0 4h-2"></path><path d="M8 3v3M11 3v3"></path></svg></sc-if>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0">
+<span style="font-size: 15px; font-weight: 700; line-height: 1.25">{{ it.name }}</span>
+<div style="display: flex; gap: 6px; flex-wrap: wrap">
+<span style="font-size: 11px; font-weight: 700; color: {{ it.listFg }}; background: {{ it.listBg }}; padding: 3px 8px; border-radius: 10px">{{ it.list }}</span>
+<span style="font-size: 11px; font-weight: 700; color: {{ it.vFg }}; background: {{ it.vBg }}; padding: 3px 8px; border-radius: 10px">{{ it.verdict }}</span>
+</div>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; color: #4B5563">Best price after Cashback</span>
+<span style="font-size: 26px; font-weight: 800; letter-spacing: -0.5px">{{ it.payStr }}</span>
+<span style="font-size: 13px; font-weight: 600">at {{ it.bestStore }}</span>
+</div>
+<span style="font-size: 12px; font-weight: 700; color: {{ it.deltaFg }}; background: {{ it.deltaBg }}; padding: 5px 10px; border-radius: 12px; text-align: right; max-width: 160px; line-height: 1.3">{{ it.deltaTxt }}</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<svg role="img" aria-label="{{ it.sparkLabel }}" width="100%" height="64" viewBox="0 0 320 64" preserveAspectRatio="none" style="display: block; background: #FAFAFA; border-radius: 8px">
+<line x1="0" x2="320" y1="{{ it.targetY }}" y2="{{ it.targetY }}" stroke="#6B21A8" stroke-width="1.5" stroke-dasharray="5 4"></line>
+<polyline points="{{ it.spark }}" fill="none" stroke="#1F2937" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"></polyline>
+<circle cx="{{ it.lastX }}" cy="{{ it.lastY }}" r="4.5" fill="#D92D2A"></circle>
+</svg>
+<div style="display: flex; justify-content: space-between; font-size: 11px; color: #4B5563">
+<span>{{ windowLabel }}</span>
+<span style="color: #6B21A8; font-weight: 700">Target {{ it.targetStr }}</span>
+<span>Low {{ it.lowStr }}</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; border: 1px solid #E5E7EB; border-radius: 14px; overflow: hidden">
+<div style="display: grid; grid-template-columns: 1.2fr 0.9fr 1.1fr 0.9fr; gap: 4px; padding: 8px 10px; background: #F9FAFB; font-size: 11px; font-weight: 700; color: #4B5563">
+<span>Store</span><span style="text-align: right">Price</span><span style="text-align: right">Cashback</span><span style="text-align: right">You pay</span>
+</div>
+<sc-for list="{{ it.vendors }}" as="v" hint-placeholder-count="3">
+<sc-if value="{{ v.isBest }}" hint-placeholder-val="{{ true }}">
+<a href="{{ v.url }}" style="display: grid; grid-template-columns: 1.2fr 0.9fr 1.1fr 0.9fr; gap: 4px; align-items: center; min-height: 44px; padding: 6px 10px; background: #ECFDF5; border-top: 1px solid #A7F3D0; text-decoration: none; color: #1F2937">
+<span style="font-size: 13px; font-weight: 800; display: flex; flex-direction: column; gap: 1px">{{ v.store }}<span style="font-size: 10px; font-weight: 800; color: #046C4E">BEST</span></span>
+<span style="font-size: 13px; text-align: right">{{ v.price }}</span>
+<span style="font-size: 12px; text-align: right; color: #046C4E; font-weight: 700; display: flex; flex-direction: column">{{ v.cb }}<span style="font-size: 10px; font-weight: 600">{{ v.rateLabel }}</span></span>
+<span style="font-size: 14px; text-align: right; font-weight: 800">{{ v.pay }}</span>
+</a>
+</sc-if>
+<sc-if value="{{ v.notBest }}" hint-placeholder-val="{{ false }}">
+<a href="{{ v.url }}" style="display: grid; grid-template-columns: 1.2fr 0.9fr 1.1fr 0.9fr; gap: 4px; align-items: center; min-height: 44px; padding: 6px 10px; border-top: 1px solid #E5E7EB; text-decoration: none; color: #1F2937">
+<span style="font-size: 13px; font-weight: 600">{{ v.store }}</span>
+<span style="font-size: 13px; text-align: right">{{ v.price }}</span>
+<span style="font-size: 12px; text-align: right; color: #046C4E; display: flex; flex-direction: column">{{ v.cb }}<span style="font-size: 10px">{{ v.rateLabel }}</span></span>
+<span style="font-size: 13px; text-align: right; font-weight: 600">{{ v.pay }}</span>
+</a>
+</sc-if>
+</sc-for>
+</div>
+<sc-if value="{{ it.hasNote }}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 12px; color: #4B5563; line-height: 1.4">{{ it.note }}</span>
+</sc-if>
+<a href="V2Approve.dc.html" style="height: 44px; border-radius: 22px; background: #D92D2A; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">Buy at {{ it.bestStore }} via ShopBack</a>
+</div>
+</sc-for>
+<p style="margin: 4px 4px 0; font-size: 12px; color: #4B5563; line-height: 1.5">You pay = price − voucher + shipping − Cashback. Cashback = rate × (price − voucher), up to each store’s cap. Store names open a search on that store. Prices and rates in this prototype are samples, so check them at the store before you buy.</p>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":3300}}'>
+class Component extends DCLogic {
+renderVals() {
+var self = this;
+var weekly = !!(this.state && this.state.mode === 'weekly');
+var S = {
+shopee: { name: 'Shopee', url: 'https://shopee.sg/search?keyword=' },
+lazada: { name: 'Lazada', url: 'https://www.lazada.sg/catalog/?q=' },
+amazon: { name: 'Amazon SG', url: 'https://www.amazon.sg/s?k=' }
+};
+var LIST = {
+'To Buy': ['#1F2937', '#F3F4F6'],
+'Recurring': ['#046C4E', '#DEF7EC'],
+'Wishlist': ['#6B21A8', '#F3E8FF']
+};
+var RAW = [
+{ name: 'Floor lamp, LED arc', short: 'Floor lamp', list: 'To Buy', img: '/_blob/7199813906b95561fcfa8d0beed0ae10', q: 'led arc floor lamp', target: 150,
+v: [ { s: 'shopee', p: 169, p1: 169, p7: 172, r: 0.16, r1: 0.06, r7: 0.06, cap: 30, boost: true },
+{ s: 'lazada', p: 159, p1: 159, p7: 162, r: 0.04 },
+{ s: 'amazon', p: 165, p1: 165, p7: 168, r: 0.03 } ],
+h: [158,157,157,156,156,155,155,156,156,155,154,154,155,155,154,154,153,153,154,153,153,152,0,153,153,152,152,153,0,0] },
+{ name: 'Hill’s Science Diet Adult Small Bites, Chicken & Barley, 6.8 kg', short: 'Dog food', list: 'Recurring', img: '/_blob/ffeba48b103ae978b1782d7c30b28d51', q: 'hills science diet adult small bites 6.8kg', target: 90,
+v: [ { s: 'shopee', p: 96.14, p1: 99, p7: 101, r: 0.08 },
+{ s: 'lazada', p: 99.9, p1: 99.9, p7: 102.9, r: 0.05 },
+{ s: 'amazon', p: 102.5, p1: 102.5, p7: 104.9, r: 0.04 } ],
+h: [95.5,95,94.8,95,95.6,95,94.4,94,94.8,95.2,94.6,94,93.4,93.8,94.4,93.9,93.2,93,93.6,93.1,92.6,93,0,92.8,92.4,92.1,91.6,91.3,0,0] },
+{ name: 'Philips Airfryer NA231/09', short: 'Air fryer', list: 'To Buy', icon: 'fryer', q: 'philips airfryer NA231', target: 165,
+v: [ { s: 'shopee', p: 189, p1: 189, p7: 199, vc: 11, r: 0.06, cap: 10 },
+{ s: 'lazada', p: 185, p1: 185, p7: 189, r: 0.04 },
+{ s: 'amazon', p: 179, p1: 179, p7: 189, r: 0.03 } ],
+h: [190,190,189,188,188,187,186,186,185,185,184,183,183,182,182,182,181,181,180,180,179,179,0,180,178,177,175,174,0,0] },
+{ name: 'Sonos soundbar, compact', short: 'Soundbar', list: 'To Buy', img: '/_blob/562337d77cd1e2c0b7e58fed67bc2a8e', q: 'sonos soundbar', target: 800,
+v: [ { s: 'amazon', p: 899, p1: 899, p7: 949, r: 0.08, cap: 60 },
+{ s: 'lazada', p: 889, p1: 889, p7: 909, r: 0.04, cap: 30 },
+{ s: 'shopee', p: 919, p1: 919, p7: 939, r: 0.07, cap: 40 } ],
+h: [905,905,900,899,899,895,895,890,889,889,885,885,882,880,880,879,879,879,879,880,879,879,0,875,869,859,849,845,0,0] },
+{ name: 'Compact espresso machine', short: 'Espresso', list: 'Wishlist', icon: 'espresso', q: 'compact espresso machine', target: 380,
+v: [ { s: 'shopee', p: 449, p1: 449, p7: 449, vc: 20, r: 0.07, cap: 25 },
+{ s: 'lazada', p: 419, p1: 419, p7: 409, r: 0.04, cap: 20 },
+{ s: 'amazon', p: 425, p1: 425, p7: 425, r: 0.03 } ],
+h: [415,414,414,413,412,410,408,405,402,400,398,396,395,394,393,393,392,393,392,392,393,392,0,395,397,399,400,401,0,0] }
+];
+function r2(n) { return Math.round(n * 100) / 100; }
+function money(n) { return '$' + Math.abs(n).toFixed(2); }
+function calc(v, k) {
+var p = v['p' + k];
+var rate = v['r' + k] != null ? v['r' + k] : v.r;
+var vc = k === '' ? (v.vc || 0) : (v['vc' + k] || 0);
+var base = p - vc;
+var cb = base * rate;
+var capped = false;
+if (v.cap && cb > v.cap) { cb = v.cap; capped = true; }
+cb = r2(cb);
+return { price: p, rate: rate, vc: vc, cb: cb, capped: capped, pay: r2(base + (v.ship || 0) - cb) };
+}
+function best(vs, k) {
+var b = null;
+vs.forEach(function (v) { var c = calc(v, k); if (!b || c.pay < b.c.pay) b = { v: v, c: c }; });
+return b;
+}
+var VERD = [
+['Hit your target', '#046C4E', '#DEF7EC'],
+['30-day low', '#3730A3', '#E0E7FF'],
+['Still dropping: wait', '#92400E', '#FEF3C7'],
+['Rising: hold off', '#9A3412', '#FFEDD5'],
+['Holding steady', '#374151', '#F3F4F6']
+];
+var since = weekly ? 'last week' : 'yesterday';
+var items = RAW.map(function (it) {
+var t = best(it.v, ''), y = best(it.v, '1'), w = best(it.v, '7');
+var h = it.h.slice();
+h[29] = t.c.pay; h[28] = y.c.pay; h[22] = w.c.pay;
+var prev = weekly ? w.c.pay : y.c.pay;
+var delta = r2(t.c.pay - prev);
+var min30 = Math.min.apply(null, h);
+var rank;
+if (t.c.pay <= it.target) rank = 0;
+else if (t.c.pay <= min30 + 0.001) rank = 1;
+else if (h[27] > h[28] && h[28] > h[29]) rank = 2;
+else if (h[29] > h[22]) rank = 3;
+else rank = 4;
+var series = h.slice(weekly ? 0 : 16);
+var lo = Math.min.apply(null, series.concat([it.target]));
+var hi = Math.max.apply(null, series.concat([it.target]));
+var W = 320, H = 64, P = 7;
+function Y(val) { return r2(P + (hi - val) / ((hi - lo) || 1) * (H - 2 * P)); }
+var pts = series.map(function (val, i) { return r2(i * W / (series.length - 1)) + ',' + Y(val); }).join(' ');
+var cheap = it.v.reduce(function (a, v) { return v.p < a.p ? v : a; });
+var pays = it.v.map(function (v) { return calc(v, '').pay; });
+var maxPay = Math.max.apply(null, pays);
+var notes = [];
+var vendors = it.v.map(function (v) {
+var c = calc(v, '');
+var isBest = v === t.v;
+if (c.vc) notes.push(S[v.s].name + ' voucher −$' + c.vc + ' applied');
+if (v.boost) notes.push(S[v.s].name + ' Cashback Boosted from ' + Math.round(v.r1 * 100) + '% to ' + Math.round(c.rate * 100) + '% until 11:59 pm');
+if (c.capped) notes.push(S[v.s].name + ' Cashback capped at $' + v.cap);
+return {
+store: S[v.s].name,
+url: S[v.s].url + encodeURIComponent(it.q),
+price: money(c.price),
+cb: '−' + money(c.cb),
+rateLabel: (v.boost ? 'Boosted ' : '') + Math.round(c.rate * 100) + '%' + (c.capped ? ', capped' : ''),
+pay: money(c.pay),
+isBest: isBest, notBest: !isBest
+};
+});
+var deltaTxt = delta < 0 ? money(delta) + ' lower than ' + since : delta > 0 ? money(delta) + ' higher than ' + since : 'Same as ' + since;
+var lc = LIST[it.list];
+return {
+name: it.name, short: it.short, list: it.list, listFg: lc[0], listBg: lc[1],
+img: it.img || '', hasImg: !!it.img, isFryer: it.icon === 'fryer', isEspresso: it.icon === 'espresso',
+rank: rank, verdict: VERD[rank][0], vFg: VERD[rank][1], vBg: VERD[rank][2],
+pay: t.c.pay, cb: t.c.cb, saved: r2(maxPay - t.c.pay),
+payStr: money(t.c.pay), bestStore: S[t.v.s].name, bestKey: t.v.s,
+flip: cheap !== t.v,
+delta: delta, deltaTxt: deltaTxt,
+deltaShort: delta === 0 ? '$0' : (delta < 0 ? '−' : '+') + money(delta),
+deltaFg: delta < 0 ? '#046C4E' : delta > 0 ? '#9A3412' : '#4B5563',
+deltaBg: delta < 0 ? '#DEF7EC' : delta > 0 ? '#FFEDD5' : '#F3F4F6',
+spark: pts, lastX: W, lastY: Y(t.c.pay), targetY: Y(it.target),
+targetStr: '$' + it.target, lowStr: money(Math.min.apply(null, series)),
+sparkLabel: it.short + ' best price over ' + (weekly ? '30' : '14') + ' days, now ' + money(t.c.pay),
+vendors: vendors, note: notes.join(' · '), hasNote: notes.length > 0
+};
+});
+items.sort(function (a, b) { return a.rank - b.rank || a.delta - b.delta; });
+var maxAbs = Math.max.apply(null, items.map(function (i) { return Math.abs(i.delta); })) || 1;
+items.forEach(function (i) {
+i.leftW = i.delta < 0 ? r2(-i.delta / maxAbs * 100) : 0;
+i.rightW = i.delta > 0 ? r2(i.delta / maxAbs * 100) : 0;
+});
+var good = items.filter(function (i) { return i.rank <= 1; }).length;
+var cbTotal = items.reduce(function (s, i) { return s + i.cb; }, 0);
+var saved = items.reduce(function (s, i) { return s + i.saved; }, 0);
+var flips = items.filter(function (i) { return i.flip; }).length;
+var mover = items.reduce(function (a, i) { return i.delta < a.delta ? i : a; });
+var counts = {};
+items.forEach(function (i) { counts[i.bestKey] = (counts[i.bestKey] || 0) + 1; });
+var COL = { shopee: ['#1F2937', '#FFFFFF'], amazon: ['#6B7280', '#FFFFFF'], lazada: ['#D1D5DB', '#1F2937'] };
+var wins = ['shopee', 'amazon', 'lazada'].filter(function (k) { return counts[k]; }).map(function (k) {
+return { pct: r2(counts[k] / items.length * 100), bg: COL[k][0], fg: COL[k][1], label: S[k].name + ' ' + counts[k] };
+});
+return {
+isDaily: !weekly, isWeekly: weekly,
+setDaily: function () { self.setState({ mode: 'daily' }); },
+setWeekly: function () { self.setState({ mode: 'weekly' }); },
+stamp: weekly ? 'Weekly · 9 to 16 Nov · sent Mon 8:00 am' : 'Daily · Mon 16 Nov · checked 8:00 am',
+headline: good + ' of ' + items.length + ' watched items are at a good price ' + (weekly ? 'this week' : 'today'),
+subline: mover.delta < 0 ? 'Biggest drop: ' + mover.short.toLowerCase() + ', ' + money(mover.delta) + ' lower than ' + since + '.' : 'No prices dropped since ' + since + '.',
+goodCount: good, cbTotal: money(cbTotal), savedTotal: money(saved),
+changeTitle: weekly ? 'this week vs last' : 'today vs yesterday',
+windowLabel: weekly ? '30 days' : '14 days',
+items: items, wins: wins, flips: flips, count: items.length,
+winsLabel: wins.map(function (w) { return w.label; }).join(', ')
+};
+}
+}
+</script>
+</body>
+</html>

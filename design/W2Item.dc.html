@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Price check: floor lamp</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#1D4ED8}a:hover{color:#1E3A8A}
+</style>
+</helmet>
+<div style="width: 390px; height: 1180px; box-sizing: border-box; background: #F5F5F5; color: #1F2937; font-family: -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+<div style="background: #FFFFFF; padding: 10px 8px 12px; display: flex; align-items: center; gap: 4px; border-bottom: 1px solid #E5E7EB">
+<a href="W1Report.dc.html" aria-label="Back to the report" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+</a>
+<div style="display: flex; flex-direction: column; flex: 1">
+<h1 style="margin: 0; font-size: 18px; font-weight: 700">Floor lamp, LED arc</h1>
+<span style="font-size: 12px; color: #4B5563">To Buy · price check · Mon 16 Nov</span>
+</div>
+</div>
+<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 14px">
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px; display: flex; gap: 14px; align-items: center">
+<div style="width: 84px; height: 84px; border-radius: 14px; overflow: hidden; flex: none"><img src="/_blob/7199813906b95561fcfa8d0beed0ae10" alt="Floor lamp" style="width: 100%; height: 100%; object-fit: cover"></div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 11px; font-weight: 700; color: #046C4E; background: #DEF7EC; padding: 3px 8px; border-radius: 10px; align-self: flex-start">Hit your target</span>
+<span style="font-size: 28px; font-weight: 800; letter-spacing: -0.5px">{{ bestPay }}</span>
+<span style="font-size: 13px; font-weight: 600">at {{ bestStore }} after Cashback</span>
+<span style="font-size: 12px; font-weight: 700; color: #FFFFFF; background: #4338CA; padding: 3px 8px; border-radius: 10px; align-self: flex-start">Boosted 16% until 11:59 pm</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 800">Sticker price vs what you pay</h2>
+<sc-for list="{{ stores }}" as="s" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; font-size: 13px">
+<span style="font-weight: 700">{{ s.name }}</span>
+<span><span style="color: #4B5563">{{ s.price }} </span><span style="color: #046C4E; font-weight: 700">{{ s.cbShort }}</span><span style="font-weight: 800"> = {{ s.pay }}</span></span>
+</div>
+<div style="height: 22px; width: {{ s.trackW }}%; display: flex; border-radius: 6px; overflow: hidden" role="img" aria-label="{{ s.label }}">
+<div style="width: {{ s.payW }}%; background: {{ s.payBg }}"></div>
+<div style="flex: 1; background: #6EE7B7"></div>
+</div>
+</div>
+</sc-for>
+<div style="display: flex; gap: 14px; font-size: 11px; color: #4B5563">
+<span style="display: flex; align-items: center; gap: 5px"><span style="width: 10px; height: 10px; border-radius: 2px; background: #1F2937"></span>You pay</span>
+<span style="display: flex; align-items: center; gap: 5px"><span style="width: 10px; height: 10px; border-radius: 2px; background: #6EE7B7"></span>ShopBack Cashback</span>
+</div>
+<div style="background: #FEF3C7; border-radius: 12px; padding: 10px 12px; font-size: 13px; line-height: 1.45; color: #78350F">{{ insight }}</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 800">30 days: sticker vs after Cashback</h2>
+<svg role="img" aria-label="{{ chartLabel }}" width="100%" height="150" viewBox="0 0 320 150" preserveAspectRatio="none" style="display: block">
+<rect x="{{ boostX }}" y="0" width="{{ boostW }}" height="150" fill="#E0E7FF"></rect>
+<line x1="0" x2="320" y1="{{ targetY }}" y2="{{ targetY }}" stroke="#6B21A8" stroke-width="1.5" stroke-dasharray="5 4"></line>
+<polyline points="{{ stickerPts }}" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="4 3"></polyline>
+<polyline points="{{ payPts }}" fill="none" stroke="#1F2937" stroke-width="2.5" stroke-linejoin="round"></polyline>
+<circle cx="320" cy="{{ lastY }}" r="5" fill="#D92D2A"></circle>
+</svg>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; font-size: 11px; color: #4B5563">
+<span style="display: flex; align-items: center; gap: 5px"><span style="width: 14px; height: 0; border-top: 2px dashed #9CA3AF"></span>Lowest sticker</span>
+<span style="display: flex; align-items: center; gap: 5px"><span style="width: 14px; height: 3px; background: #1F2937"></span>Best after Cashback</span>
+<span style="display: flex; align-items: center; gap: 5px"><span style="width: 14px; height: 0; border-top: 2px dashed #6B21A8"></span>Your target $150</span>
+<span style="display: flex; align-items: center; gap: 5px"><span style="width: 10px; height: 10px; background: #E0E7FF"></span>Boosted</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 800">The maths at {{ bestStore }}</h2>
+<sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+<div style="display: flex; justify-content: space-between; font-size: 14px; color: {{ st.fg }}; font-weight: {{ st.weight }}; border-top: {{ st.border }}; padding-top: {{ st.pad }}px">
+<span>{{ st.label }}</span><span>{{ st.value }}</span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 8px">
+<a href="V2Approve.dc.html" style="flex: 1; height: 48px; border-radius: 24px; background: #D92D2A; color: #FFFFFF; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">Buy at {{ bestStore }} via ShopBack</a>
+<button style="height: 48px; padding: 0 16px; border: 1.5px solid #1F2937; border-radius: 24px; background: #FFFFFF; color: #1F2937; font-size: 14px; font-weight: 700; font-family: inherit">Target</button>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1180}}'>
+class Component extends DCLogic {
+renderVals() {
+var V = [
+{ name: 'Shopee', p: 169, r: 0.16, cap: 30, boost: true },
+{ name: 'Lazada', p: 159, r: 0.04 },
+{ name: 'Amazon SG', p: 165, r: 0.03 }
+];
+var target = 150;
+function r2(n) { return Math.round(n * 100) / 100; }
+function money(n) { return '$' + Math.abs(n).toFixed(2); }
+var rows = V.map(function (v) {
+var base = v.p - (v.vc || 0);
+var cb = base * v.r, capped = false;
+if (v.cap && cb > v.cap) { cb = v.cap; capped = true; }
+cb = r2(cb);
+return { v: v, cb: cb, capped: capped, pay: r2(base + (v.ship || 0) - cb) };
+});
+var best = rows.reduce(function (a, b) { return b.pay < a.pay ? b : a; });
+var cheap = rows.reduce(function (a, b) { return b.v.p < a.v.p ? b : a; });
+var maxP = Math.max.apply(null, V.map(function (v) { return v.p; }));
+var stores = rows.map(function (x) {
+var isBest = x === best;
+return {
+name: x.v.name + (isBest ? ' (best)' : ''), price: money(x.v.p), pay: money(x.pay),
+trackW: r2(x.v.p / maxP * 100), payW: r2(x.pay / x.v.p * 100),
+payBg: isBest ? '#1F2937' : '#6B7280',
+cbShort: '−' + money(x.cb),
+label: x.v.name + ': sticker ' + money(x.v.p) + ', Cashback ' + money(x.cb) + ', you pay ' + money(x.pay)
+};
+});
+var insight = cheap === best
+? best.v.name + ' has the lowest sticker price and stays cheapest after Cashback.'
+: cheap.v.name + ' has the lowest sticker price (' + money(cheap.v.p) + '), but ' + best.v.name + '’s ' + Math.round(best.v.r * 100) + '% Cashback makes it ' + money(cheap.pay - best.pay) + ' cheaper to buy.';
+var sticker = [168,168,167,167,166,166,165,165,166,165,164,164,165,164,163,163,162,162,163,162,162,161,162,161,160,160,159,159,159,159];
+var pay = [158,157,157,156,156,155,155,156,156,155,154,154,155,155,154,154,153,153,154,153,153,152,155.52,153,153,152,152,153,152.64,best.pay];
+var all = sticker.concat(pay, [target]);
+var hi = Math.max.apply(null, all) + 2, lo = Math.min.apply(null, all) - 2;
+var W = 320, H = 150;
+function Y(v) { return r2((hi - v) / (hi - lo) * H); }
+function pts(a) { return a.map(function (v, i) { return r2(i * W / (a.length - 1)) + ',' + Y(v); }).join(' '); }
+var step = W / 29;
+var b = best.v;
+var steps = [
+{ label: 'Price', value: money(b.p) },
+{ label: 'Voucher', value: b.vc ? '−' + money(b.vc) : 'none' },
+{ label: 'Cashback, ' + Math.round(b.r * 100) + '% of ' + money(b.p - (b.vc || 0)) + (best.capped ? ' (capped)' : ', under the $' + b.cap + ' cap'), value: '−' + money(best.cb) },
+{ label: 'Shipping', value: b.ship ? money(b.ship) : 'free' },
+{ label: 'You pay', value: money(best.pay), strong: true }
+].map(function (s) {
+return { label: s.label, value: s.value, fg: s.strong ? '#1F2937' : (s.label.indexOf('Cashback') === 0 ? '#046C4E' : '#374151'), weight: s.strong ? 800 : 500, border: s.strong ? '1px solid #E5E7EB' : 'none', pad: s.strong ? 8 : 0 };
+});
+return {
+bestPay: money(best.pay), bestStore: best.v.name, stores: stores, insight: insight,
+stickerPts: pts(sticker), payPts: pts(pay), lastY: Y(best.pay), targetY: Y(target),
+boostX: r2(W - step / 2), boostW: r2(step / 2),
+chartLabel: 'Over 30 days the lowest sticker price fell from $168 to $159, while the best price after Cashback fell to ' + money(best.pay) + ' today.',
+steps: steps
+};
+}
+}
+</script>
+</body>
+</html>

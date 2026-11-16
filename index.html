@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShopList prototype</title>
+<meta name="description" content="Clickable prototype of ShopList: one list for everything you plan to buy, with an agent that finds the best price after ShopBack Cashback.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2"></path><circle cx="5" cy="18" r="1"></circle></svg>
+      </span>
+      <div>
+        <strong>ShopList</strong>
+        <span>A ShopBack concept prototype</span>
+      </div>
+    </div>
+    <p class="intro">One list for everything you plan to buy. An agent watches prices and ShopBack Cashback, and asks for your yes. Click through the screens, or use ← and → keys.</p>
+    <label class="jump-label" for="jump">Go to a screen</label>
+    <select id="jump"></select>
+    <nav id="nav" aria-label="Screens"></nav>
+    <p class="note">A concept prototype, not a ShopBack product. All prices, Cashback rates and caps are samples. Product images are illustrations.</p>
+  </aside>
+  <main class="main">
+    <header class="bar">
+      <div class="titles">
+        <span id="flow"></span>
+        <h1 id="title"></h1>
+      </div>
+      <div class="pager">
+        <button id="prev" type="button">Back</button>
+        <button id="next" type="button">Next</button>
+      </div>
+    </header>
+    <div class="stage" id="stage"></div>
+  </main>
+</div>
+<script src="screens.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
