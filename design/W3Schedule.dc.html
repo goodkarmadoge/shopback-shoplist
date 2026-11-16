@@ -13,7 +13,7 @@ body{margin:0}
 a{color:#1D4ED8}a:hover{color:#1E3A8A}
 </style>
 </helmet>
-<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F5F5F5; color: #1F2937; font-family: -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F5F5F5; color: #1F2937; font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow: hidden">
 <div style="background: #FFFFFF; padding: 10px 8px 12px; display: flex; align-items: center; gap: 4px; border-bottom: 1px solid #E5E7EB">
 <a href="W1Report.dc.html" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
 <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
@@ -21,7 +21,7 @@ a{color:#1D4ED8}a:hover{color:#1E3A8A}
 <h1 style="margin: 0; font-size: 18px; font-weight: 700">Price Watchlist Update</h1>
 </div>
 <div style="flex: 1; padding: 14px 16px; display: flex; flex-direction: column; gap: 12px">
-<div style="background: #1F2937; color: #FFFFFF; border-radius: 18px; padding: 14px 16px; display: flex; gap: 10px; align-items: flex-start">
+<div style="background: linear-gradient(135deg, #E2F2FF 0%, #ECE5FF 52%, #FFE5EC 100%); color: #1F2937; border-radius: 18px; padding: 14px 16px; display: flex; gap: 10px; align-items: flex-start">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCA5A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><rect x="4" y="5" width="16" height="16" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>
 <span style="font-size: 15px; line-height: 1.4; font-weight: 600">{{ summary }}</span>
 </div>
@@ -30,7 +30,7 @@ a{color:#1D4ED8}a:hover{color:#1E3A8A}
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
 <sc-for list="{{ freqs }}" as="f" hint-placeholder-count="2">
 <sc-if value="{{ f.on }}" hint-placeholder-val="{{ false }}">
-<button aria-pressed="true" onClick="{{ f.pick }}" style="min-height: 64px; border: 2px solid #1F2937; border-radius: 16px; background: #F5F5F5; font-family: inherit; color: #1F2937; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 8px 12px; cursor: pointer"><span style="font-size: 15px; font-weight: 800">{{ f.label }}</span><span style="font-size: 12px; color: #4B5563; text-align: left">{{ f.hint }}</span></button>
+<button aria-pressed="true" onClick="{{ f.pick }}" style="min-height: 64px; border: 2px solid #1F2937; border-radius: 16px; background: #F5F5F5; font-family: inherit; color: #1F2937; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 8px 12px; cursor: pointer"><span style="font-size: 15px; font-weight: 700">{{ f.label }}</span><span style="font-size: 12px; color: #4B5563; text-align: left">{{ f.hint }}</span></button>
 </sc-if>
 <sc-if value="{{ f.off }}" hint-placeholder-val="{{ true }}">
 <button aria-pressed="false" onClick="{{ f.pick }}" style="min-height: 64px; border: 1px solid #D1D5DB; border-radius: 16px; background: #FFFFFF; font-family: inherit; color: #1F2937; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 8px 12px; cursor: pointer"><span style="font-size: 15px; font-weight: 600">{{ f.label }}</span><span style="font-size: 12px; color: #4B5563; text-align: left">{{ f.hint }}</span></button>
@@ -42,7 +42,7 @@ a{color:#1D4ED8}a:hover{color:#1E3A8A}
 <span style="font-size: 13px; font-weight: 700; color: #4B5563">Day</span>
 <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px">
 <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
-<sc-if value="{{ d.on }}" hint-placeholder-val="{{ false }}"><button aria-pressed="true" onClick="{{ d.pick }}" style="height: 44px; border: 2px solid #1F2937; border-radius: 12px; background: #F5F5F5; font-size: 13px; font-weight: 800; font-family: inherit; color: #1F2937; cursor: pointer">{{ d.label }}</button></sc-if>
+<sc-if value="{{ d.on }}" hint-placeholder-val="{{ false }}"><button aria-pressed="true" onClick="{{ d.pick }}" style="height: 44px; border: 2px solid #1F2937; border-radius: 12px; background: #F5F5F5; font-size: 13px; font-weight: 700; font-family: inherit; color: #1F2937; cursor: pointer">{{ d.label }}</button></sc-if>
 <sc-if value="{{ d.off }}" hint-placeholder-val="{{ true }}"><button aria-pressed="false" onClick="{{ d.pick }}" style="height: 44px; border: 1px solid #D1D5DB; border-radius: 12px; background: #FFFFFF; font-size: 13px; font-weight: 600; font-family: inherit; color: #1F2937; cursor: pointer">{{ d.label }}</button></sc-if>
 </sc-for>
 </div>
@@ -52,7 +52,7 @@ a{color:#1D4ED8}a:hover{color:#1E3A8A}
 <span style="font-size: 13px; font-weight: 700; color: #4B5563">Time</span>
 <div style="display: flex; gap: 8px">
 <sc-for list="{{ times }}" as="t" hint-placeholder-count="3">
-<sc-if value="{{ t.on }}" hint-placeholder-val="{{ false }}"><button aria-pressed="true" onClick="{{ t.pick }}" style="flex: 1; height: 44px; border: 2px solid #1F2937; border-radius: 22px; background: #F5F5F5; font-size: 14px; font-weight: 800; font-family: inherit; color: #1F2937; cursor: pointer">{{ t.label }}</button></sc-if>
+<sc-if value="{{ t.on }}" hint-placeholder-val="{{ false }}"><button aria-pressed="true" onClick="{{ t.pick }}" style="flex: 1; height: 44px; border: 2px solid #1F2937; border-radius: 22px; background: #F5F5F5; font-size: 14px; font-weight: 700; font-family: inherit; color: #1F2937; cursor: pointer">{{ t.label }}</button></sc-if>
 <sc-if value="{{ t.off }}" hint-placeholder-val="{{ true }}"><button aria-pressed="false" onClick="{{ t.pick }}" style="flex: 1; height: 44px; border: 1px solid #D1D5DB; border-radius: 22px; background: #FFFFFF; font-size: 14px; font-weight: 600; font-family: inherit; color: #1F2937; cursor: pointer">{{ t.label }}</button></sc-if>
 </sc-for>
 </div>
@@ -61,17 +61,17 @@ a{color:#1D4ED8}a:hover{color:#1E3A8A}
 <fieldset style="margin: 0; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 6px 14px; display: flex; flex-direction: column">
 <legend style="position: absolute; width: 1px; height: 1px; overflow: hidden">Where to send it</legend>
 <span style="font-size: 15px; font-weight: 700; padding: 6px 0 2px">Send it to</span>
-<label style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 14px">Push notification<input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #D92D2A; margin: 0"></label>
-<label style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; border-top: 1px solid #E5E7EB">ShopList inbox<input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #D92D2A; margin: 0"></label>
-<label style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; border-top: 1px solid #E5E7EB">Email<input type="checkbox" style="width: 22px; height: 22px; accent-color: #D92D2A; margin: 0"></label>
+<label style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 14px">Push notification<input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #111111; margin: 0"></label>
+<label style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; border-top: 1px solid #E5E7EB">ShopList inbox<input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #111111; margin: 0"></label>
+<label style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; border-top: 1px solid #E5E7EB">Email<input type="checkbox" style="width: 22px; height: 22px; accent-color: #111111; margin: 0"></label>
 </fieldset>
 <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 6px 14px; display: flex; flex-direction: column">
-<label style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 700">Skip it when nothing changed</span><span style="font-size: 12px; color: #4B5563">No report if no price moved</span></span><input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #D92D2A; margin: 0; flex: none"></label>
-<label style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; border-top: 1px solid #E5E7EB"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 700">Alert me straight away</span><span style="font-size: 12px; color: #4B5563">If an item hits its target or gets Boosted</span></span><input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #D92D2A; margin: 0; flex: none"></label>
+<label style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 700">Skip it when nothing changed</span><span style="font-size: 12px; color: #4B5563">No report if no price moved</span></span><input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #111111; margin: 0; flex: none"></label>
+<label style="min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; border-top: 1px solid #E5E7EB"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 700">Alert me straight away</span><span style="font-size: 12px; color: #4B5563">If an item hits its target or gets Upsized</span></span><input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #111111; margin: 0; flex: none"></label>
 </div>
 </div>
 <div style="background: #FFFFFF; border-top: 1px solid #E5E7EB; padding: 12px 16px 20px; flex: none">
-<a href="W1Report.dc.html" style="height: 52px; border-radius: 26px; background: #D92D2A; color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">Save</a>
+<a href="W1Report.dc.html" style="height: 52px; border-radius: 26px; background: #111111; color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">Save</a>
 </div>
 </div>
 </x-dc>

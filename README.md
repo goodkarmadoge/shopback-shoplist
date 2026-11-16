@@ -1,14 +1,16 @@
 # ShopList prototype
 
-A clickable web prototype of **ShopList**, a concept for ShopBack: one list for everything you plan to buy (To Buy, Recurring and Wishlist), with an agent that watches prices and ShopBack Cashback and asks for your yes.
+A clickable web prototype of **ShopList**, a concept for ShopBack: your smart shopping list. Keep track of products you want to buy, get research reports and smart alerts for price drops, and get the best prices and Cashback on everything you buy online. Items are sorted into Buy Now, Wish List and Recurring Purchases, and Karma, the AI shopping assistant, does the legwork.
+
+The screens follow the look of ShopBack’s existing AI assistant flows: chat-style layout, the gradient sparkle, black pill buttons, pastel gradient cards, emoji-led chips and the Figtree typeface.
 
 It is a static site with no build step and no dependencies.
 
 ## Flows
 
 1. **Discover and onboard:** ShopBack home icon and promo card, welcome with the tutorial video, onboarding, seeding lists, capture, coach marks.
-2. **Everyday ShopList:** three shelves, To Buy details and picks, Recurring restock, Wishlist and the Cashback Wish Jar.
-3. **The agent does the legwork:** morning briefing, approve, bought.
+2. **Everyday ShopList:** Buy Now details and picks, Wish List and the Cashback Wish Jar, Recurring restock.
+3. **Karma does the legwork:** morning briefing, approve, bought.
 4. **Price Watchlist Update:** daily or weekly price check with the best price after Cashback per store, item detail, settings, notifications.
 5. **Save from any store:** the ShopBack browser extension's “Save to ShopList” picker, and how the item lands in the app.
 
@@ -24,7 +26,8 @@ Interactive screens: the tutorial video widget, the Daily / Weekly report switch
   ```
 
 - `app.js` renders the screens: `{{holes}}`, `<sc-if>`, `<sc-for>`, `<dc-import>`, click handlers and component state.
-- `img/` holds simple product illustrations used in place of photos.
+- `img/` holds simple product illustrations used in place of photos, and the assistant sparkle.
+- `fonts/` holds Figtree (SIL Open Font License, see `fonts/OFL.txt`).
 
 ## Run locally
 
