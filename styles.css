@@ -1,8 +1,15 @@
+@font-face {
+  font-family: Figtree;
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(fonts/figtree-latin.woff2) format('woff2');
+}
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 body {
-  font-family: -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: #E9EBEF;
+  font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #F5F5F5;
   color: #1F2937;
 }
 a { color: #1D4ED8; }
@@ -25,7 +32,7 @@ a:hover { color: #1E3A8A; }
   overflow-y: auto;
 }
 .brand { display: flex; gap: 12px; align-items: center; }
-.brand .mark { width: 40px; height: 40px; border-radius: 12px; background: #D92D2A; display: flex; align-items: center; justify-content: center; flex: none; }
+.brand .mark { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #E2F2FF 0%, #ECE5FF 52%, #FFE5EC 100%); display: flex; align-items: center; justify-content: center; flex: none; }
 .brand strong { display: block; font-size: 18px; }
 .brand span { font-size: 13px; color: #4B5563; }
 .intro { margin: 0; font-size: 14px; line-height: 1.5; color: #374151; }
@@ -43,7 +50,7 @@ a:hover { color: #1E3A8A; }
   text-decoration: none;
 }
 #nav a:hover { background: #F3F4F6; }
-#nav a[aria-current="page"] { background: #FDECEC; color: #B91C1C; font-weight: 700; }
+#nav a[aria-current="page"] { background: #F0F1F3; color: #111111; font-weight: 700; }
 
 .jump-label, #jump { display: none; }
 
@@ -63,7 +70,7 @@ a:hover { color: #1E3A8A; }
   height: 44px;
   padding: 0 18px;
   border-radius: 22px;
-  border: 1.5px solid #1F2937;
+  border: 1px solid #D1D5DB;
   background: #FFFFFF;
   font: inherit;
   font-size: 14px;
@@ -71,7 +78,7 @@ a:hover { color: #1E3A8A; }
   color: #1F2937;
   cursor: pointer;
 }
-.pager button#next { background: #D92D2A; border-color: #D92D2A; color: #FFFFFF; }
+.pager button#next { background: #111111; border-color: #111111; color: #FFFFFF; }
 .pager button:disabled { opacity: 0.4; cursor: default; }
 
 .stage { flex: 1; display: flex; justify-content: center; align-items: flex-start; padding: 8px 16px 40px; }

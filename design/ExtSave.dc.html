@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Save to ShopList: pick a list</title>
+<title>Save to ShopList: pick where it goes</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -13,10 +13,10 @@ body{margin:0}
 a{color:#1D4ED8}a:hover{color:#1E3A8A}
 </style>
 </helmet>
-<div style="position: relative; width: 1280px; height: 800px; overflow: hidden; color: #1F2937; font-family: -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif">
+<div style="position: relative; width: 1280px; height: 800px; overflow: hidden; color: #1F2937; font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif">
 <dc-import name="ExtPage" hint-size="1280px,800px"></dc-import>
 <sc-if value="{{ saved }}" hint-placeholder-val="{{ false }}">
-<div style="position: absolute; right: 748px; top: 232px; height: 44px; padding: 0 16px 0 10px; border-radius: 22px; background: #1F2937; color: #FFFFFF; box-shadow: 0 4px 14px rgba(31,41,55,0.25); display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700">
+<div style="position: absolute; right: 748px; top: 232px; height: 44px; padding: 0 16px 0 10px; border-radius: 22px; background: #111111; color: #FFFFFF; box-shadow: 0 4px 14px rgba(31,41,55,0.25); display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700">
 <span style="width: 28px; height: 28px; border-radius: 14px; background: #D92D2A; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"></path></svg></span>
 Saved to {{ listName }}
 </div>
@@ -24,16 +24,16 @@ Saved to {{ listName }}
 <div style="display: flex; gap: 12px; align-items: center">
 <span style="width: 40px; height: 40px; border-radius: 20px; background: #DEF7EC; flex: none; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#046C4E" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 16px; font-weight: 800">Saved to {{ listName }}</span>
+<span style="font-size: 16px; font-weight: 700">Saved to {{ listName }}</span>
 <span style="font-size: 13px; color: #4B5563">It’s in your ShopList app now</span>
 </div>
 </div>
 <sc-if value="{{ watch }}" hint-placeholder-val="{{ true }}">
-<span style="font-size: 13px; line-height: 1.45; color: #374151">Your agent is watching the price at Shopee, Lazada and Amazon SG, and will tell you if it drops under $1,200 after Cashback.</span>
+<span style="font-size: 13px; line-height: 1.45; color: #374151">Karma is watching the price at Shopee, Lazada and Amazon SG, and will tell you if it drops under $1,200 after Cashback.</span>
 </sc-if>
 <div style="display: flex; gap: 8px">
 <button onClick="{{ reopen }}" style="height: 44px; padding: 0 16px; border: 1.5px solid #1F2937; border-radius: 22px; background: #FFFFFF; font-size: 14px; font-weight: 700; font-family: inherit; color: #1F2937; cursor: pointer">Change list</button>
-<a href="ExtSynced.dc.html" style="flex: 1; height: 44px; border-radius: 22px; background: #D92D2A; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">Open ShopList</a>
+<a href="ExtSynced.dc.html" style="flex: 1; height: 44px; border-radius: 22px; background: #111111; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">Open ShopList</a>
 </div>
 </div>
 </sc-if>
@@ -51,7 +51,7 @@ Saved to {{ listName }}
 <div style="display: flex; gap: 8px">
 <label for="newlist" style="position: absolute; width: 1px; height: 1px; overflow: hidden">New list name</label>
 <input id="newlist" type="text" value="Living room upgrade" style="flex: 1; height: 44px; border: 1.5px solid #1F2937; border-radius: 12px; padding: 0 12px; font-size: 14px; font-family: inherit; box-sizing: border-box; min-width: 0">
-<button onClick="{{ toggleCreate }}" style="height: 44px; padding: 0 14px; border: none; border-radius: 12px; background: #1F2937; color: #FFFFFF; font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer">Done</button>
+<button onClick="{{ toggleCreate }}" style="height: 44px; padding: 0 14px; border: none; border-radius: 12px; background: #111111; color: #FFFFFF; font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer">Done</button>
 </div>
 </sc-if>
 <sc-if value="{{ notCreating }}" hint-placeholder-val="{{ true }}">
@@ -66,10 +66,10 @@ Saved to {{ listName }}
 <sc-if value="{{ l.noImg }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B21A8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg></sc-if>
 </span>
 <span style="flex: 1; display: flex; flex-direction: column; gap: 1px">
-<span style="font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 6px">{{ l.name }}<sc-if value="{{ l.suggested }}" hint-placeholder-val="{{ false }}"><span style="font-size: 10px; font-weight: 800; color: #3730A3; background: #E0E7FF; padding: 2px 6px; border-radius: 8px">SUGGESTED</span></sc-if></span>
+<span style="font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 6px">{{ l.name }}<sc-if value="{{ l.suggested }}" hint-placeholder-val="{{ false }}"><span style="font-size: 10px; font-weight: 700; color: #3730A3; background: #E0E7FF; padding: 2px 6px; border-radius: 8px">SUGGESTED</span></sc-if></span>
 <span style="font-size: 12px; color: #4B5563">{{ l.sub }}</span>
 </span>
-<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D92D2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></sc-if>
+<sc-if value="{{ l.on }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></sc-if>
 </button>
 </sc-for>
 </div>
@@ -77,7 +77,7 @@ Saved to {{ listName }}
 <span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 14px; font-weight: 700">Watch the price</span><span style="font-size: 12px; color: #4B5563">Tell me if it drops under $1,200 after Cashback</span></span>
 <span style="width: 44px; height: 26px; border-radius: 13px; background: {{ swBg }}; position: relative; flex: none"><span style="position: absolute; top: 3px; left: {{ swX }}px; width: 20px; height: 20px; border-radius: 10px; background: #FFFFFF"></span></span>
 </button>
-<button onClick="{{ save }}" style="height: 48px; border: none; border-radius: 24px; background: #D92D2A; color: #FFFFFF; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer">Save to {{ listName }}</button>
+<button onClick="{{ save }}" style="height: 48px; border: none; border-radius: 24px; background: #111111; color: #FFFFFF; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer">Save to {{ listName }}</button>
 </div>
 </sc-if>
 </div>
@@ -92,9 +92,9 @@ var saved = !!s.saved;
 var watch = s.watch !== false;
 var creating = !!s.creating;
 var L = [
-{ k: 'tobuy', name: 'To Buy', n: 3, img: '/_blob/7199813906b95561fcfa8d0beed0ae10', tile: '#F3F4F6', hint: 'Things you need soon' },
-{ k: 'recur', name: 'Recurring', n: 4, img: '/_blob/ffeba48b103ae978b1782d7c30b28d51', tile: '#DEF7EC', hint: 'Things you buy again and again' },
-{ k: 'wish', name: 'Wishlist', n: 2, img: '', tile: '#F3E8FF', hint: 'Things you’d love someday', suggested: true }
+{ k: 'tobuy', name: 'Buy Now', n: 3, img: '/_blob/7199813906b95561fcfa8d0beed0ae10', tile: '#F3F4F6', hint: 'When you’re ready to buy' },
+{ k: 'wish', name: 'Wish List', n: 2, img: '', tile: '#F3E8FF', hint: 'Big-ticket purchases', suggested: true },
+{ k: 'recur', name: 'Recurring', n: 4, img: '/_blob/ffeba48b103ae978b1782d7c30b28d51', tile: '#DEF7EC', hint: 'Like dog food or groceries' }
 ];
 var cur = L.filter(function (l) { return l.k === pick; })[0];
 return {
