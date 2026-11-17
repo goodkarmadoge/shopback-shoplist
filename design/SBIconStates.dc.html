@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>ShopList icon button and promo card states</title>
+<title>ShopList tab states and the home card</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -13,51 +13,36 @@ body{margin:0}
 a{color:#1D4ED8}a:hover{color:#1E3A8A}
 </style>
 </helmet>
-<div style="width: 560px; height: 520px; box-sizing: border-box; background: #FFFFFF; color: #1F2937; font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div style="width: 560px; height: 520px; box-sizing: border-box; background: #FFFFFF; color: #1B2140; font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; padding: 24px; display: flex; flex-direction: column; gap: 14px; overflow: hidden">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<h1 style="margin: 0; font-size: 20px; font-weight: 700">ShopList icon button</h1>
-<span style="font-size: 13px; color: #4B5563">Sits in the home quick-access row, middle slot.</span>
+<h1 style="margin: 0; font-size: 20px; font-weight: 700">ShopList tab in the ShopBack tab bar</h1>
+<p style="margin: 0; font-size: 13px; color: #4B5563">Takes the middle slot, between Categories and Quests. Watchlist stays reachable from Account.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
-<div style="background: #F5F5F5; border-radius: 16px; padding: 18px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px">
-<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px">
-<span style="width: 52px; height: 52px; border-radius: 16px; background: #D92D2A; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 3px #FDECEC"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2"></path><circle cx="5" cy="18" r="1"></circle></svg></span>
-<span style="font-size: 12px; font-weight: 700; color: #B91C1C">ShopList</span>
-<span style="position: absolute; top: -8px; right: -14px; font-size: 10px; font-weight: 700; color: #FFFFFF; background: #1570EF; padding: 2px 6px; border-radius: 8px; border: 2px solid #F5F5F5">New</span>
+<div style="display: flex; gap: 10px">
+<div style="flex: 1; background: #F5F5F5; border-radius: 16px; padding: 14px 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+<span style="position: relative; width: 84px; height: 60px; background: #FFFFFF; border-top: 1px solid #E5E7EB; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B6275" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"></path><path d="M9.500 10l2 2 3.500-4"></path></svg><span style="position: absolute; top: 2px; left: 50%; margin-left: 6px; min-width: 18px; height: 18px; box-sizing: border-box; padding: 0 5px; border-radius: 9px; background: #E5322D; color: #FFFFFF; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFFFF">New</span><span style="font-size: 11px; font-weight: 500; color: #5B6275">ShopList</span></span>
+<span style="font-size: 14px; font-weight: 700">New</span>
+<span style="font-size: 12px; color: #4B5563; line-height: 1.35">Until the first item is added.</span>
 </div>
-<span style="font-size: 13px; font-weight: 700">New</span>
-<span style="font-size: 12px; color: #4B5563; text-align: center; line-height: 1.35">Until the first item is added. Red tile stands out once.</span>
+<div style="flex: 1; background: #F5F5F5; border-radius: 16px; padding: 14px 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+<span style="position: relative; width: 84px; height: 60px; background: #FFFFFF; border-top: 1px solid #E5E7EB; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B6275" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"></path><path d="M9.500 10l2 2 3.500-4"></path></svg><span style="position: absolute; top: 2px; left: 50%; margin-left: 6px; min-width: 18px; height: 18px; box-sizing: border-box; padding: 0 5px; border-radius: 9px; background: #E5322D; color: #FFFFFF; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFFFF">3</span><span style="font-size: 11px; font-weight: 500; color: #5B6275">ShopList</span></span>
+<span style="font-size: 14px; font-weight: 700">Needs your yes</span>
+<span style="font-size: 12px; color: #4B5563; line-height: 1.35">Count of items Karma has waiting. Never counts offers.</span>
 </div>
-<div style="background: #F5F5F5; border-radius: 16px; padding: 18px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px">
-<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px">
-<span style="width: 52px; height: 52px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E5E7EB; box-sizing: border-box; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D92D2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2"></path><circle cx="5" cy="18" r="1"></circle></svg></span>
-<span style="font-size: 12px; font-weight: 600">ShopList</span>
-<span style="position: absolute; top: -8px; right: -8px; min-width: 22px; height: 22px; box-sizing: border-box; font-size: 12px; font-weight: 700; color: #FFFFFF; background: #D92D2A; border-radius: 11px; border: 2px solid #F5F5F5; display: flex; align-items: center; justify-content: center">3</span>
-</div>
-<span style="font-size: 13px; font-weight: 700">Needs your yes</span>
-<span style="font-size: 12px; color: #4B5563; text-align: center; line-height: 1.35">Count of items Karma has waiting. Never counts offers.</span>
-</div>
-<div style="background: #F5F5F5; border-radius: 16px; padding: 18px 10px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px">
-<div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
-<span style="width: 52px; height: 52px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E5E7EB; box-sizing: border-box; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2"></path><circle cx="5" cy="18" r="1"></circle></svg></span>
-<span style="font-size: 12px; font-weight: 600">ShopList</span>
-</div>
-<span style="font-size: 13px; font-weight: 700">All caught up</span>
-<span style="font-size: 12px; color: #4B5563; text-align: center; line-height: 1.35">Same as the other quick-access icons.</span>
+<div style="flex: 1; background: #F5F5F5; border-radius: 16px; padding: 14px 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+<span style="position: relative; width: 84px; height: 60px; background: #FFFFFF; border-top: 1px solid #E5E7EB; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"></path><path d="M9.500 10l2 2 3.500-4"></path></svg><span style="font-size: 11px; font-weight: 700; color: #111111">ShopList</span></span>
+<span style="font-size: 14px; font-weight: 700">Selected</span>
+<span style="font-size: 12px; color: #4B5563; line-height: 1.35">Bold label and top bar, like the other tabs.</span>
 </div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h2 style="margin: 0; font-size: 16px; font-weight: 700">After setup, the promo card becomes a ShopList card</h2>
-</div>
-<div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 8px rgba(31,41,55,0.08)">
-<div style="width: 44px; height: 44px; border-radius: 14px; background: #FDECEC; flex: none; display: flex; align-items: center; justify-content: center">
-<img src="img/spark.svg" alt="" width="22" height="22" style="flex: none">
-</div>
-<div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 4px 0 0; font-size: 16px; font-weight: 700">After setup, the home banner becomes a ShopList card</h2>
+<div style="border-radius: 16px; background: linear-gradient(135deg, #E2F2FF 0%, #ECE5FF 52%, #FFE5EC 100%); padding: 12px 14px; display: flex; align-items: center; gap: 12px">
+<img src="img/karma.svg" alt="" width="44" height="44" style="flex: none; border-radius: 50%; background: #FFE5EC">
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
 <span style="font-size: 15px; font-weight: 700">Your ShopList: 3 things need a yes</span>
-<span style="font-size: 13px; color: #4B5563">Dog food restock · soundbar at a 90-day low · lamp Upsized</span>
+<span style="font-size: 13px; color: #374151; line-height: 1.35">Dog food restock · soundbar at a 90-day low · air purifier Upsized</span>
 </div>
-<a href="V2Agent.dc.html" style="height: 44px; padding: 0 16px; border-radius: 22px; background: #111111; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; text-decoration: none; flex: none">Review</a>
+<a href="V2Agent.dc.html" style="height: 44px; padding: 0 18px; border-radius: 22px; background: #111111; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; text-decoration: none; flex: none">Review</a>
 </div>
 </div>
 </x-dc>
