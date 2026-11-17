@@ -1,72 +1,632 @@
 {
-  "v": 3,
-  "attachments": {},
-  "boards": {
-    "Add.dc.html": {"h": 844, "radius": 28, "title": "2 · Capture in your own words", "w": 390, "x": 470, "y": 0},
-    "Detail.dc.html": {"h": 844, "radius": 28, "title": "4 · Price tracker", "w": 390, "x": 1410, "y": 0},
-    "F1Intro.dc.html": {"h": 844, "radius": 28, "title": "First open: what ShopList is", "w": 390, "x": 217, "y": 2800},
-    "F2Empty.dc.html": {"h": 844, "radius": 28, "title": "Empty state: nothing on the list yet", "w": 390, "x": 687, "y": 2800},
-    "Hero.dc.html": {"h": 648, "title": "Hero image", "w": 607, "x": -470, "y": 2800},
-    "Home.dc.html": {"h": 844, "radius": 28, "title": "0 · App home, list first", "w": 390, "x": -470, "y": 0},
-    "J1Capture.dc.html": {"h": 844, "radius": 28, "title": "A · Layer 1: get it out of your head", "w": 390, "x": -470, "y": 1400},
-    "J2List.dc.html": {"h": 844, "radius": 28, "title": "B · Layer 2: see it and be reminded", "w": 390, "x": 0, "y": 1400},
-    "J3Refine.dc.html": {"h": 844, "radius": 28, "title": "C · Layer 3: add what you know", "w": 390, "x": 470, "y": 1400},
-    "J4Explore.dc.html": {"h": 844, "radius": 28, "title": "D · Layer 4: pinpoint a product", "w": 390, "x": 940, "y": 1400},
-    "J5Track.dc.html": {"h": 844, "radius": 28, "title": "E · Layer 5: track that product", "w": 390, "x": 1410, "y": 1400},
-    "Loop.dc.html": {"h": 844, "radius": 28, "title": "6 · Closing the loop", "w": 390, "x": 2350, "y": 0},
-    "Main.dc.html": {"h": 844, "radius": 28, "title": "1 · ShopList by life area", "w": 390, "x": 0, "y": 0},
-    "Recurring.dc.html": {"h": 844, "radius": 28, "title": "5 · Recurring", "w": 390, "x": 1880, "y": 0},
-    "Refine.dc.html": {"h": 844, "radius": 28, "title": "3 · Item requirements", "w": 390, "x": 940, "y": 0},
-    "V2Agent.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "8 · Karma’s briefing: what needs your yes", "w": 390, "x": 0, "y": 2800},
-    "V2Approve.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "9 · Approve, then check out via ShopBack", "w": 390, "x": 470, "y": 2800},
-    "V2Bought.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "10 · Bought: Cashback tracked, jar topped up", "w": 390, "x": 940, "y": 2800},
-    "V2Capture.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "2 · Say it once, Karma sorts it", "w": 390, "x": 470, "y": 0},
-    "V2Home.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "3 · ShopList home: Buy Now, Wish List, Recurring", "w": 390, "x": 940, "y": 0},
-    "V2Picks.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "5 · Picks after Cashback", "w": 390, "x": 470, "y": 1400},
-    "V2Recurring.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "6 · Recurring: restock before you run out", "w": 390, "x": 940, "y": 1400},
-    "V2Refine.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "4 · Wish List: a few taps, not a form", "w": 390, "x": 0, "y": 1400},
-    "V2Seed.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "1 · Blank ShopList: three stacked lists, pick one, then add an item (try it)", "w": 390, "x": 0, "y": 0},
-    "V2Wish.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "7 · Wish List: the Cashback Wish Jar", "w": 390, "x": 1410, "y": 1400},
-    "SBHome.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "H1 · ShopBack home: ShopList icon button and promo card", "w": 390, "x": 0, "y": 4200, "is_interactive": true},
-    "SBIconStates.dc.html": {"h": 520, "page": "v2", "radius": 20, "title": "H2 · Icon button and promo card states", "w": 560, "x": 470, "y": 4200},
-    "O1Welcome.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "O1 · Welcome: your smart shopping list", "w": 390, "x": 0, "y": 5600, "is_interactive": true},
-    "O2Player.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "O2 · Tutorial video, full screen", "w": 390, "x": 470, "y": 5600},
-    "O3Lists.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "O3 · Buy Now, Wish List, Recurring Purchases", "w": 390, "x": 940, "y": 5600},
-    "O4Agent.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "O4 · Meet Karma, your AI shopping assistant", "w": 390, "x": 1410, "y": 5600},
-    "VideoWidget.dc.html": {"h": 300, "page": "v2", "radius": 20, "title": "Video widget component (press Play: it runs)", "w": 358, "x": 1880, "y": 5600, "is_interactive": true},
-    "T1Capture.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "T1 · Coach mark: add anything", "w": 390, "x": 0, "y": 7000},
-    "T2Shelves.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "T2 · Coach mark: sorted for you", "w": 390, "x": 470, "y": 7000},
-    "T3Agent.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "T3 · Coach mark: Karma's briefing", "w": 390, "x": 940, "y": 7000},
-    "W1Report.dc.html": {"h": 3300, "page": "v2", "radius": 28, "title": "W1 · Price Watchlist Update (switch Daily / Weekly)", "w": 390, "x": 0, "y": 8400, "is_interactive": true},
-    "W2Item.dc.html": {"h": 1180, "page": "v2", "radius": 28, "title": "W2 · One item: why the best price wins after Cashback", "w": 390, "x": 470, "y": 8400},
-    "W3Schedule.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "W3 · Report settings: Daily or Weekly", "w": 390, "x": 940, "y": 8400, "is_interactive": true},
-    "W4Notify.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "W4 · How the report arrives", "w": 390, "x": 1410, "y": 8400},
-    "ExtPage.dc.html": {"h": 800, "page": "v2", "radius": 12, "title": "X1 · On a store page, the extension adds “Save to ShopList”", "w": 1280, "x": 0, "y": 12100},
-    "ExtSave.dc.html": {"h": 800, "page": "v2", "radius": 12, "title": "X2 · Pick where it goes, then Save (press Save: it works)", "w": 1280, "x": 1360, "y": 12100, "is_interactive": true},
-    "ExtSynced.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "X3 · On the phone: it lands in the right place", "w": 390, "x": 2720, "y": 12100},
-    "ExtItem.dc.html": {"h": 844, "page": "v2", "radius": 28, "title": "X4 · The saved item, now watched", "w": 390, "x": 3190, "y": 12100}
+ "v": 3,
+ "attachments": {},
+ "boards": {
+  "Add.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "2 · Capture in your own words",
+   "w": 390,
+   "x": 470,
+   "y": 0
   },
-  "createdOnFiles": {"at": "2026-11-16T04:15:00Z", "v": 1},
-  "designSystems": [],
-  "launch": {"page": "v2", "view": "canvas"},
-  "noteOrder": ["ftue", "journey", "heading", "v2row1", "v2row2", "v2row3", "v2changes", "v2row4", "v2row5", "v2row6", "v2flow", "v2row7", "v2calc", "v2row8"],
-  "notes": {
-    "ftue": {"kind": "title1", "maxW": 1550, "text": "First-time experience", "w": 240, "x": -470, "y": 2500},
-    "heading": {"kind": "title1", "maxW": 3210, "text": "ShopList: where your purchase intent lives", "w": 240, "x": -470, "y": -300},
-    "journey": {"kind": "title1", "maxW": 2270, "text": "One item’s journey: from “a soundbar” to a tracked product", "w": 240, "x": -470, "y": 1100},
-    "v2changes": {"fill": "blue", "page": "v2", "size": 24, "text": "What changed from v1\n\n• One ShopList, sorted three ways: Buy Now, Wish List and Recurring live together, not as separate tabs to set up.\n• Capture sorts itself: say it once and the agent files each item into the right list.\n• Questions become taps: details are a short chat of chips, not a form.\n• The agent works between visits and brings back a briefing of things that need a yes.\n• Wish Jar: Cashback from everyday buys fills a wish, which links the three lists.\n• Honest checkout: the agent hands off to the store through ShopBack; it never pays for you.\n\nAll prices and rates are illustrative.", "w": 380, "x": 1450, "y": 0},
-    "v2row1": {"kind": "title1", "maxW": 1330, "page": "v2", "text": "Get it in: one capture, sorted into the right list", "w": 240, "x": 0, "y": -300},
-    "v2row2": {"kind": "title1", "maxW": 1800, "page": "v2", "text": "One ShopList: Buy Now, Wish List, Recurring", "w": 240, "x": 0, "y": 1100},
-    "v2row3": {"kind": "title1", "maxW": 1330, "page": "v2", "text": "Karma does the legwork; you say yes", "w": 240, "x": 0, "y": 2500},
-    "v2row4": {"kind": "title1", "maxW": 1030, "page": "v2", "text": "Discover: ShopList on the ShopBack home", "x": 0, "y": 3900},
-    "v2row5": {"kind": "title1", "maxW": 2238, "page": "v2", "text": "First-time onboarding, with the tutorial video", "x": 0, "y": 5300},
-    "v2row6": {"kind": "title1", "maxW": 1330, "page": "v2", "text": "Tutorial: three coach marks on the first visit", "x": 0, "y": 6700},
-    "v2flow": {"fill": "orange", "page": "v2", "size": "m", "text": "First-time flow\n\nH1 home icon or promo card → O1 Welcome (video) → O3 Three lists → O4 Your agent → 1 Seed lists → 2 Capture → T1 → T2 → T3 → 3 ShopList.\n\nThe icon button keeps its New badge until the first list is made, then shows a count of items that need a yes. The promo card can be dismissed and comes back once, after 7 days.\n\nThe tutorial video is a 45-second, 4-chapter tour. The widget plays a mock of it now; the real video is still to be made.", "w": 380, "x": 1100, "y": 4200},
-    "v2row7": {"kind": "title1", "maxW": 1800, "page": "v2", "text": "Price Watchlist Update: a price check on everything you watch", "x": 0, "y": 8100},
-    "v2calc": {"fill": "green", "page": "v2", "size": "m", "text": "How the best price is worked out\n\nFor each store:\nCashback = rate × (price − voucher), up to the store’s cap. Shipping earns no Cashback.\nYou pay = price − voucher + shipping − Cashback.\n\nThe lowest “you pay” wins. In this sample, the cheapest sticker price loses after Cashback for 4 of 5 items.\n\nVerdicts, in order: hit your target · 30-day low · still dropping (wait) · rising (hold off) · holding steady.\n\nDaily compares with yesterday and charts 14 days; Weekly compares with last week and charts 30 days.\n\nPrices, rates and caps are illustrative, seeded from the 16 Nov Good Buy briefing. Store links are searches, not product pages.", "w": 400, "x": 1880, "y": 8400},
-    "v2row8": {"kind": "title1", "maxW": 3580, "page": "v2", "text": "Save from any store: the ShopBack extension adds to ShopList", "x": 0, "y": 11800}
+  "Detail.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "4 · Price tracker",
+   "w": 390,
+   "x": 1410,
+   "y": 0
   },
-  "order": ["Home.dc.html", "Main.dc.html", "Add.dc.html", "Refine.dc.html", "Detail.dc.html", "Recurring.dc.html", "Loop.dc.html", "J1Capture.dc.html", "J2List.dc.html", "J3Refine.dc.html", "J4Explore.dc.html", "J5Track.dc.html", "Hero.dc.html", "F1Intro.dc.html", "F2Empty.dc.html", "V2Seed.dc.html", "V2Capture.dc.html", "V2Home.dc.html", "V2Refine.dc.html", "V2Picks.dc.html", "V2Recurring.dc.html", "V2Wish.dc.html", "V2Agent.dc.html", "V2Approve.dc.html", "V2Bought.dc.html", "SBHome.dc.html", "SBIconStates.dc.html", "O1Welcome.dc.html", "O2Player.dc.html", "O3Lists.dc.html", "O4Agent.dc.html", "VideoWidget.dc.html", "T1Capture.dc.html", "T2Shelves.dc.html", "T3Agent.dc.html", "W1Report.dc.html", "W2Item.dc.html", "W3Schedule.dc.html", "W4Notify.dc.html", "ExtPage.dc.html", "ExtSave.dc.html", "ExtSynced.dc.html", "ExtItem.dc.html"],
-  "pages": [{"id": "v1", "name": "v1 concepts"}, {"id": "v2", "name": "v2 prototype screens"}],
-  "title": "ShopList UI concepts"
+  "F1Intro.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "First open: what ShopList is",
+   "w": 390,
+   "x": 217,
+   "y": 2800
+  },
+  "F2Empty.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "Empty state: nothing on the list yet",
+   "w": 390,
+   "x": 687,
+   "y": 2800
+  },
+  "Hero.dc.html": {
+   "h": 648,
+   "title": "Hero image",
+   "w": 607,
+   "x": -470,
+   "y": 2800
+  },
+  "Home.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "0 · App home, list first",
+   "w": 390,
+   "x": -470,
+   "y": 0
+  },
+  "J1Capture.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "A · Layer 1: get it out of your head",
+   "w": 390,
+   "x": -470,
+   "y": 1400
+  },
+  "J2List.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "B · Layer 2: see it and be reminded",
+   "w": 390,
+   "x": 0,
+   "y": 1400
+  },
+  "J3Refine.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "C · Layer 3: add what you know",
+   "w": 390,
+   "x": 470,
+   "y": 1400
+  },
+  "J4Explore.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "D · Layer 4: pinpoint a product",
+   "w": 390,
+   "x": 940,
+   "y": 1400
+  },
+  "J5Track.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "E · Layer 5: track that product",
+   "w": 390,
+   "x": 1410,
+   "y": 1400
+  },
+  "Loop.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "6 · Closing the loop",
+   "w": 390,
+   "x": 2350,
+   "y": 0
+  },
+  "Main.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "1 · ShopList by life area",
+   "w": 390,
+   "x": 0,
+   "y": 0
+  },
+  "Recurring.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "5 · Recurring",
+   "w": 390,
+   "x": 1880,
+   "y": 0
+  },
+  "Refine.dc.html": {
+   "h": 844,
+   "radius": 28,
+   "title": "3 · Item requirements",
+   "w": 390,
+   "x": 940,
+   "y": 0
+  },
+  "V2Agent.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "8 · Karma’s briefing: what needs your yes",
+   "w": 390,
+   "x": 0,
+   "y": 2800
+  },
+  "V2Approve.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "9 · Approve, then check out via ShopBack",
+   "w": 390,
+   "x": 470,
+   "y": 2800
+  },
+  "V2Bought.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "10 · Bought: Cashback tracked, jar topped up",
+   "w": 390,
+   "x": 940,
+   "y": 2800
+  },
+  "V2Capture.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "2 · Say it once, Karma sorts it",
+   "w": 390,
+   "x": 470,
+   "y": 0
+  },
+  "V2Home.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "3 · ShopList home: Buy Now, Wish List, Recurring",
+   "w": 390,
+   "x": 940,
+   "y": 0
+  },
+  "V2Picks.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "5 · Picks after Cashback",
+   "w": 390,
+   "x": 470,
+   "y": 1400
+  },
+  "V2Recurring.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "6 · Recurring: restock before you run out",
+   "w": 390,
+   "x": 940,
+   "y": 1400
+  },
+  "V2Refine.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "4 · Wish List: a few taps, not a form",
+   "w": 390,
+   "x": 0,
+   "y": 1400
+  },
+  "V2Seed.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "1 · Blank ShopList: three stacked lists, pick one, then add an item (try it)",
+   "w": 390,
+   "x": 0,
+   "y": 0
+  },
+  "V2Wish.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "7 · Wish List: the Cashback Wish Jar",
+   "w": 390,
+   "x": 1410,
+   "y": 1400
+  },
+  "SBHome.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "H1 · ShopBack home: ShopList banner, chip and tab",
+   "w": 390,
+   "x": 0,
+   "y": 4200,
+   "is_interactive": true
+  },
+  "SBIconStates.dc.html": {
+   "h": 520,
+   "page": "v2",
+   "radius": 20,
+   "title": "H2 · ShopList tab states and the home card",
+   "w": 560,
+   "x": 470,
+   "y": 4200
+  },
+  "O1Welcome.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "O1 · Welcome: your smart shopping list",
+   "w": 390,
+   "x": 0,
+   "y": 5600,
+   "is_interactive": true
+  },
+  "O2Player.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "O2 · Tutorial video, full screen",
+   "w": 390,
+   "x": 470,
+   "y": 5600
+  },
+  "O3Lists.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "O3 · Buy Now, Wish List, Recurring Purchases",
+   "w": 390,
+   "x": 940,
+   "y": 5600
+  },
+  "O4Agent.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "O4 · Meet Karma, your AI shopping assistant",
+   "w": 390,
+   "x": 1410,
+   "y": 5600
+  },
+  "VideoWidget.dc.html": {
+   "h": 300,
+   "page": "v2",
+   "radius": 20,
+   "title": "Video widget component (press Play: it runs)",
+   "w": 358,
+   "x": 1880,
+   "y": 5600,
+   "is_interactive": true
+  },
+  "T1Capture.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "T1 · Coach mark: add anything",
+   "w": 390,
+   "x": 0,
+   "y": 7000
+  },
+  "T2Shelves.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "T2 · Coach mark: sorted for you",
+   "w": 390,
+   "x": 470,
+   "y": 7000
+  },
+  "T3Agent.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "T3 · Coach mark: Karma's briefing",
+   "w": 390,
+   "x": 940,
+   "y": 7000
+  },
+  "W1Report.dc.html": {
+   "h": 3300,
+   "page": "v2",
+   "radius": 28,
+   "title": "W1 · Price Watchlist Update (switch Daily / Weekly)",
+   "w": 390,
+   "x": 0,
+   "y": 8400,
+   "is_interactive": true
+  },
+  "W2Item.dc.html": {
+   "h": 1180,
+   "page": "v2",
+   "radius": 28,
+   "title": "W2 · One item: why the best price wins after Cashback",
+   "w": 390,
+   "x": 470,
+   "y": 8400
+  },
+  "W3Schedule.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "W3 · Report settings: Daily or Weekly",
+   "w": 390,
+   "x": 940,
+   "y": 8400,
+   "is_interactive": true
+  },
+  "W4Notify.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "W4 · How the report arrives",
+   "w": 390,
+   "x": 1410,
+   "y": 8400
+  },
+  "ExtPage.dc.html": {
+   "h": 800,
+   "page": "v2",
+   "radius": 12,
+   "title": "X1 · On a store page, the extension adds “Save to ShopList”",
+   "w": 1280,
+   "x": 0,
+   "y": 12100
+  },
+  "ExtSave.dc.html": {
+   "h": 800,
+   "page": "v2",
+   "radius": 12,
+   "title": "X2 · Pick where it goes, then Save (press Save: it works)",
+   "w": 1280,
+   "x": 1360,
+   "y": 12100,
+   "is_interactive": true
+  },
+  "ExtSynced.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "X3 · On the phone: it lands in the right place",
+   "w": 390,
+   "x": 2720,
+   "y": 12100
+  },
+  "ExtItem.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "title": "X4 · The saved item, now watched",
+   "w": 390,
+   "x": 3190,
+   "y": 12100
+  },
+  "SBStore.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "w": 390,
+   "title": "S1 · ShopBack store page, opened from ShopList",
+   "x": 0,
+   "y": 13500
+  },
+  "SBActivate.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "w": 390,
+   "title": "S2 · Activate Cashback, then the store opens",
+   "x": 470,
+   "y": 13500
+  },
+  "SBNotifications.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "w": 390,
+   "title": "S3 · ShopBack Notifications with a ShopList filter",
+   "x": 940,
+   "y": 13500
+  },
+  "SBAccount.dc.html": {
+   "h": 844,
+   "page": "v2",
+   "radius": 28,
+   "w": 390,
+   "title": "S4 · ShopBack Account with ShopList entries",
+   "x": 1410,
+   "y": 13500
+  }
+ },
+ "createdOnFiles": {
+  "at": "2026-11-16T04:15:00Z",
+  "v": 1
+ },
+ "designSystems": [],
+ "launch": {
+  "page": "v2",
+  "view": "canvas"
+ },
+ "noteOrder": [
+  "ftue",
+  "journey",
+  "heading",
+  "v2row1",
+  "v2row2",
+  "v2row3",
+  "v2changes",
+  "v2row4",
+  "v2row5",
+  "v2row6",
+  "v2flow",
+  "v2row7",
+  "v2calc",
+  "v2row8"
+ ],
+ "notes": {
+  "ftue": {
+   "kind": "title1",
+   "maxW": 1550,
+   "text": "First-time experience",
+   "w": 240,
+   "x": -470,
+   "y": 2500
+  },
+  "heading": {
+   "kind": "title1",
+   "maxW": 3210,
+   "text": "ShopList: where your purchase intent lives",
+   "w": 240,
+   "x": -470,
+   "y": -300
+  },
+  "journey": {
+   "kind": "title1",
+   "maxW": 2270,
+   "text": "One item’s journey: from “a soundbar” to a tracked product",
+   "w": 240,
+   "x": -470,
+   "y": 1100
+  },
+  "v2changes": {
+   "fill": "blue",
+   "page": "v2",
+   "size": 24,
+   "text": "What changed from v1\n\n• One ShopList, sorted three ways: Buy Now, Wish List and Recurring live together, not as separate tabs to set up.\n• Capture sorts itself: say it once and the agent files each item into the right list.\n• Questions become taps: details are a short chat of chips, not a form.\n• The agent works between visits and brings back a briefing of things that need a yes.\n• Wish Jar: Cashback from everyday buys fills a wish, which links the three lists.\n• Honest checkout: the agent hands off to the store through ShopBack; it never pays for you.\n\nAll prices and rates are illustrative.",
+   "w": 380,
+   "x": 1450,
+   "y": 0
+  },
+  "v2row1": {
+   "kind": "title1",
+   "maxW": 1330,
+   "page": "v2",
+   "text": "Get it in: one capture, sorted into the right list",
+   "w": 240,
+   "x": 0,
+   "y": -300
+  },
+  "v2row2": {
+   "kind": "title1",
+   "maxW": 1800,
+   "page": "v2",
+   "text": "One ShopList: Buy Now, Wish List, Recurring",
+   "w": 240,
+   "x": 0,
+   "y": 1100
+  },
+  "v2row3": {
+   "kind": "title1",
+   "maxW": 1330,
+   "page": "v2",
+   "text": "Karma does the legwork; you say yes",
+   "w": 240,
+   "x": 0,
+   "y": 2500
+  },
+  "v2row4": {
+   "kind": "title1",
+   "maxW": 1030,
+   "page": "v2",
+   "text": "Discover: ShopList on the ShopBack home",
+   "x": 0,
+   "y": 3900
+  },
+  "v2row5": {
+   "kind": "title1",
+   "maxW": 2238,
+   "page": "v2",
+   "text": "First-time onboarding, with the tutorial video",
+   "x": 0,
+   "y": 5300
+  },
+  "v2row6": {
+   "kind": "title1",
+   "maxW": 1330,
+   "page": "v2",
+   "text": "Tutorial: three coach marks on the first visit",
+   "x": 0,
+   "y": 6700
+  },
+  "v2flow": {
+   "fill": "orange",
+   "page": "v2",
+   "size": "m",
+   "text": "First-time flow\n\nH1 home icon or promo card → O1 Welcome (video) → O3 Three lists → O4 Your agent → 1 Seed lists → 2 Capture → T1 → T2 → T3 → 3 ShopList.\n\nThe icon button keeps its New badge until the first list is made, then shows a count of items that need a yes. The promo card can be dismissed and comes back once, after 7 days.\n\nThe tutorial video is a 45-second, 4-chapter tour. The widget plays a mock of it now; the real video is still to be made.",
+   "w": 380,
+   "x": 1100,
+   "y": 4200
+  },
+  "v2row7": {
+   "kind": "title1",
+   "maxW": 1800,
+   "page": "v2",
+   "text": "Price Watchlist Update: a price check on everything you watch",
+   "x": 0,
+   "y": 8100
+  },
+  "v2calc": {
+   "fill": "green",
+   "page": "v2",
+   "size": "m",
+   "text": "How the best price is worked out\n\nFor each store:\nCashback = rate × (price − voucher), up to the store’s cap. Shipping earns no Cashback.\nYou pay = price − voucher + shipping − Cashback.\n\nThe lowest “you pay” wins. In this sample, the cheapest sticker price loses after Cashback for 4 of 5 items.\n\nVerdicts, in order: hit your target · 30-day low · still dropping (wait) · rising (hold off) · holding steady.\n\nDaily compares with yesterday and charts 14 days; Weekly compares with last week and charts 30 days.\n\nPrices, rates and caps are illustrative, seeded from the 16 Nov Good Buy briefing. Store links are searches, not product pages.",
+   "w": 400,
+   "x": 1880,
+   "y": 8400
+  },
+  "v2row8": {
+   "kind": "title1",
+   "maxW": 3580,
+   "page": "v2",
+   "text": "Save from any store: the ShopBack extension adds to ShopList",
+   "x": 0,
+   "y": 11800
+  },
+  "v2row9": {
+   "kind": "title1",
+   "maxW": 1800,
+   "page": "v2",
+   "text": "Inside the ShopBack app: screens rebuilt from the existing iOS UI",
+   "x": 0,
+   "y": 13200
+  }
+ },
+ "order": [
+  "Home.dc.html",
+  "Main.dc.html",
+  "Add.dc.html",
+  "Refine.dc.html",
+  "Detail.dc.html",
+  "Recurring.dc.html",
+  "Loop.dc.html",
+  "J1Capture.dc.html",
+  "J2List.dc.html",
+  "J3Refine.dc.html",
+  "J4Explore.dc.html",
+  "J5Track.dc.html",
+  "Hero.dc.html",
+  "F1Intro.dc.html",
+  "F2Empty.dc.html",
+  "V2Seed.dc.html",
+  "V2Capture.dc.html",
+  "V2Home.dc.html",
+  "V2Refine.dc.html",
+  "V2Picks.dc.html",
+  "V2Recurring.dc.html",
+  "V2Wish.dc.html",
+  "V2Agent.dc.html",
+  "V2Approve.dc.html",
+  "V2Bought.dc.html",
+  "SBHome.dc.html",
+  "SBIconStates.dc.html",
+  "O1Welcome.dc.html",
+  "O2Player.dc.html",
+  "O3Lists.dc.html",
+  "O4Agent.dc.html",
+  "VideoWidget.dc.html",
+  "T1Capture.dc.html",
+  "T2Shelves.dc.html",
+  "T3Agent.dc.html",
+  "W1Report.dc.html",
+  "W2Item.dc.html",
+  "W3Schedule.dc.html",
+  "W4Notify.dc.html",
+  "ExtPage.dc.html",
+  "ExtSave.dc.html",
+  "ExtSynced.dc.html",
+  "ExtItem.dc.html",
+  "SBStore.dc.html",
+  "SBActivate.dc.html",
+  "SBNotifications.dc.html",
+  "SBAccount.dc.html"
+ ],
+ "pages": [
+  {
+   "id": "v1",
+   "name": "v1 concepts"
+  },
+  {
+   "id": "v2",
+   "name": "v2 prototype screens"
+  }
+ ],
+ "title": "ShopList UI concepts"
 }

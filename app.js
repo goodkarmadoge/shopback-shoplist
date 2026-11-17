@@ -9,9 +9,11 @@
   var FLOWS = [
     { name: 'Discover and onboard', screens: ['SBHome', 'SBIconStates', 'O1Welcome', 'O2Player', 'O3Lists', 'O4Agent', 'V2Seed', 'V2Capture', 'T1Capture', 'T2Shelves', 'T3Agent'] },
     { name: 'Everyday ShopList', screens: ['V2Home', 'V2Refine', 'V2Picks', 'V2Recurring', 'V2Wish'] },
-    { name: 'Karma does the legwork', screens: ['V2Agent', 'V2Approve', 'V2Bought'] },
+    { name: 'Karma does the legwork', screens: ['V2Agent', 'V2Approve', 'SBStore', 'SBActivate', 'V2Bought'] },
     { name: 'Price Watchlist Update', screens: ['W1Report', 'W2Item', 'W3Schedule', 'W4Notify'] },
-    { name: 'Save from any store (extension)', screens: ['ExtPage', 'ExtSave', 'ExtSynced', 'ExtItem'] }
+    { name: 'Save from any store (extension)', screens: ['ExtPage', 'ExtSave', 'ExtSynced', 'ExtItem'] },
+    { name: 'Inside the ShopBack app', screens: ['SBNotifications', 'SBAccount'] },
+    { name: 'Inside the ShopBack app', screens: ['SBNotifications', 'SBAccount'] }
   ];
   var ORDER = [];
   FLOWS.forEach(function (f) { f.screens.forEach(function (s) { ORDER.push({ name: s, flow: f.name }); }); });
