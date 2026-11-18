@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShopBack Prototypes | Derek Wong</title>
+<meta name="description" content="Two ShopBack concept prototypes by Derek Wong: ShopList, smart lists for smart shoppers, and ShopKeeper, a first-party game to drive everyday engagement.">
+<style>
+@font-face { font-family: Figtree; font-style: normal; font-weight: 300 900; font-display: swap; src: url(fonts/figtree-latin.woff2) format('woff2'); }
+:root { --ink: #1B2140; --muted: #4A5068; --line: #E4E6EC; --bg: #F5F5F6; --card: #FFFFFF; --coral: #F04E23; --blue: #1A6CE8; --purple: #6B4EE6; --green: #0B6B4B; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.hero { background: linear-gradient(160deg, #F04E23 0%, #F5704A 55%, #F99C80 100%); color: #FFFFFF; padding: 36px 0 64px; }
+.hero-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.hero h1 { margin: 0; font-size: clamp(28px, 4.5vw, 40px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
+.byline { margin: 6px 0 0; font-size: 17px; font-weight: 600; }
+.hero-mascot { flex: none; background: #FFFFFF; border-radius: 50%; padding: 6px; }
+.sheet { background: var(--bg); border-radius: 24px 24px 0 0; margin-top: -32px; padding-bottom: 32px; }
+.tabs { display: flex; background: #E9EAEE; border-radius: 16px 16px 0 0; max-width: 460px; }
+.tabs button { flex: 1; min-height: 52px; border: none; background: none; border-radius: 16px 16px 0 0; font: inherit; font-size: 16px; font-weight: 600; color: var(--muted); cursor: pointer; padding: 0 12px; }
+.tabs button span { display: inline-block; padding: 6px 2px; border-bottom: 2px solid transparent; }
+.tabs button[aria-selected="true"] { background: var(--card); color: var(--ink); font-weight: 700; }
+.tabs button[aria-selected="true"] span { border-bottom-color: #111111; }
+.tabs button:focus-visible, .preview:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.panel { background: var(--card); border-radius: 0 20px 20px 20px; padding: 24px; }
+.titleblock { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.kicker { background: var(--ink); color: #FFFFFF; font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 8px; }
+.panel h2 { margin: 0; font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; letter-spacing: -0.4px; line-height: 1.15; max-width: 22em; }
+.preview { margin-top: 18px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); background: linear-gradient(135deg, #E2F2FF 0%, #ECE5FF 52%, #FFE5EC 100%); border: 2px solid var(--ink); border-radius: 20px; overflow: hidden; text-decoration: none; color: var(--ink); transition: transform .15s ease, box-shadow .15s ease; }
+.preview:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(27, 33, 64, 0.18); }
+.preview-media { display: block; background: #1C1F2E; }
+.preview-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; }
+.preview-body { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; padding: 24px; }
+.preview-label { font-size: 12px; font-weight: 700; color: #FFFFFF; background: var(--purple); padding: 3px 9px; border-radius: 6px; }
+.preview-title { font-size: 28px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.1; margin-top: 4px; }
+.preview-host { font-size: 14px; color: var(--muted); overflow-wrap: anywhere; }
+.btn { margin-top: 12px; min-height: 52px; padding: 0 24px; border-radius: 26px; background: #111111; color: #FFFFFF; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+.grid { margin-top: 18px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.mod { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; min-width: 0; }
+.span12 { grid-column: span 12; } .span7 { grid-column: span 7; } .span6 { grid-column: span 6; } .span5 { grid-column: span 5; }
+.mod-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.mod-head h3 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.2px; }
+.mod-num { color: var(--muted); }
+.mod-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex: none; }
+.tone-coral { background: #FFE7E0; color: #C8321A; } .tone-blue { background: #E3EEFF; color: #1552B8; } .tone-amber { background: #FFF0CC; color: #8A5A00; } .tone-purple { background: #ECE5FF; color: #4A33B8; } .tone-green { background: #DDF5EA; color: #0B6B4B; }
+.lede { margin: 0 0 14px; font-size: 16px; color: var(--ink); }
+.rows, .tiles, .funnel { list-style: none; margin: 0; padding: 0; }
+.rows li { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+.row-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--bg); display: flex; align-items: center; justify-content: center; flex: none; color: var(--ink); }
+.rows strong, .tiles strong, .funnel strong { display: block; font-size: 16px; font-weight: 700; }
+.rows p, .tiles p, .funnel p { margin: 2px 0 0; font-size: 15px; color: var(--muted); }
+.tiles { display: grid; gap: 10px; }
+.tiles.three { grid-template-columns: 1fr; }
+.tiles.cols4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } .tiles.cols3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tiles li { background: var(--bg); border-radius: 14px; padding: 14px; }
+.tiles.three li { display: grid; grid-template-columns: 44px 1fr; column-gap: 12px; align-items: start; }
+.tiles.three .tile-icon { grid-row: span 2; }
+.tile-icon { width: 44px; height: 44px; border-radius: 12px; background: #FFFFFF; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink); margin-bottom: 10px; }
+.tiles.three .tile-icon { margin-bottom: 0; }
+.hurdles { background: #FFFBF0; border-color: #F1E2B8; }
+.hurdles .tiles li { background: #FFFFFF; border: 1px solid #F1E2B8; }
+.f-cols { display: grid; grid-template-columns: 44px 1fr; font-size: 12px; font-weight: 700; color: var(--muted); padding: 0 0 6px; }
+.f-cols span:first-child { grid-column: 1 / 3; }
+.f-cols span:last-child { display: none; }
+.funnel li { display: grid; grid-template-columns: 44px 1fr; align-items: start; padding: 10px 0; border-top: 1px solid var(--line); }
+.f-num { width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.f-bar { display: block; height: 8px; border-radius: 4px; margin-top: 8px; background: linear-gradient(90deg, #F04E23, #F99C80); }
+.foot { padding: 0 20px 32px; color: var(--muted); font-size: 14px; }
+@media (max-width: 900px) {
+  .span7, .span6, .span5 { grid-column: span 12; }
+  .tiles.cols4, .tiles.cols3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .preview { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 12px; }
+  .panel { padding: 16px; border-radius: 0 0 16px 16px; }
+  .tabs { max-width: none; }
+  .tiles.cols4, .tiles.cols3 { grid-template-columns: 1fr; }
+  .hero-mascot { width: 64px; height: 64px; }
+  .btn { width: 100%; justify-content: center; }
+  .preview-body { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .preview { transition: none; } .preview:hover { transform: none; } }
+
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="wrap hero-in">
+<div>
+<h1>ShopBack Prototypes</h1>
+<p class="byline">Derek Wong</p>
+</div>
+<img class="hero-mascot" src="img/karma.svg" alt="" width="96" height="96">
+</div>
+</header>
+<main class="sheet">
+<div class="wrap">
+<div class="tabs" role="tablist" aria-label="Prototypes"><button role="tab" id="tab-shoplist" aria-controls="shoplist" aria-selected="true" data-tab="shoplist"><span>ShopList</span></button><button role="tab" id="tab-shopkeeper" aria-controls="shopkeeper" aria-selected="false" data-tab="shopkeeper"><span>ShopKeeper</span></button></div>
+<section class="panel" id="shoplist" role="tabpanel" aria-labelledby="tab-shoplist">
+<div class="titleblock">
+<span class="kicker">Prototype 1</span>
+<h2>ShopList: Smart Lists for Smart Shoppers</h2>
+</div>
+<a class="preview" href="https://shopback-shoplist.vercel.app" target="_blank" rel="noopener">
+<span class="preview-media"><img src="img/shoplist-preview.jpg" alt="Three ShopList prototype screens: the ShopBack home with the ShopList banner, the ShopList, and the price report" width="1600" height="900"></span>
+<span class="preview-body">
+<span class="preview-label">Live prototype</span>
+<span class="preview-title">ShopList</span>
+<span class="preview-host">shopback-shoplist.vercel.app</span>
+<span class="btn">View the prototype <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5H5v14h14v-5M14 4h6v6M20 4l-9 9"/></svg></span>
+</span>
+</a>
+<div class="grid">
+<article class="mod span6"><header class="mod-head"><span class="mod-icon tone-coral"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.500 20h19z"/><path d="M12 10v5M12 17.500h.01"/></svg></span><h3><span class="mod-num">1.</span> The Problem</h3></header><p class="lede">Shoppers plan purchases outside ShopBack on spreadsheets, Google Docs, and Post-its. When newer ShopBack users open the app, overwhelming store discounts dilute purchase intent. ShopBack misses the moment when buying decisions are made and customers end up not getting cashback.</p><ul class="rows"><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l9 9-8 8z"/><circle cx="7.500" cy="8.500" r="1.200"/></svg></span><div><strong>Overwhelming Offers</strong><p>in-app promos and store offers are organized by store rather than by what the shopper needs, so the context of what to buy is missing.</p></div></li><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><div><strong>Planning Happens Elsewhere</strong><p>shoppers plan in notes, docs and screenshots, spend hours comparing prices and still miss Cashback they could have earned.</p></div></li><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.500 8.500 13.500 13.500 8.500 15.500 10.500 10.500z"/></svg></span><div><strong>Discovery Belongs to Social</strong><p>on mobile, ecommerce’s fastest-growing channel, Instagram and TikTok own impulse discovery. ShopBack’s opportunity is planned purchases, where Cashback compounds when ShopBack starts the journey.</p></div></li></ul></article>
+<article class="mod span6"><header class="mod-head"><span class="mod-icon tone-blue"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.500 10.900c.6.500 1 1.200 1 2.100h5c0-.9.400-1.600 1-2.100A6 6 0 0 0 12 3z"/></svg></span><h3><span class="mod-num">2.</span> The Solution</h3></header><p class="lede">ShopList is a smart shopping list that helps users plan, track and save. This builds the habit of opening Shopback and providing them context layer when they are ready to make a purchase.</p><ul class="tiles three"><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h7"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2"/><circle cx="5" cy="18" r="1"/></svg></span><strong>Plan</strong><p>users add items by text, voice, photo or browser extension into Buy Now, Wish List or Recurring.</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.500 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span><strong>Track</strong><p>an agent built on the Shopping Assistant monitors prices and reviews, and sends daily or weekly digests on price drops and deals.</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.500 9.500c-.5-1-1.500-1.500-2.500-1.500-1.500 0-2.500.8-2.500 2s1 1.700 2.500 2 2.500.8 2.500 2-1 2-2.500 2c-1 0-2-.5-2.500-1.500M12 6.500V8M12 16v1.500"/></svg></span><strong>Save</strong><p>for every item, ShopList finds the best price after Cashback, vouchers and shipping.</p></li></ul></article>
+<article class="mod span12 hurdles"><header class="mod-head"><span class="mod-icon tone-amber"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 9.500 8l4 6 2.500-3.500L21 20z"/><path d="M14 4v4l3-1-3-1"/></svg></span><h3>Hurdles at Scale</h3></header><ul class="tiles cols4"><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5h3M17 5h3v3M20 16v3h-3M7 19H4v-3"/><path d="M8 9v6M11 9v6M14 9v6M16.500 9v6"/></svg></span><strong>Product Recognition</strong><p>This is a significant technical hurdle that can be mitigated by restricting products to specific sub-categories before gradually expanding product catalog. Matching natural-language entries to the right SKUs, stores and brands is hard; draw on existing global SKU catalogs and use follow-up prompts to clarify intent.</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg></span><strong>List Flexibility</strong><p>users may not adopt the Buy Now, Wish List and Recurring taxonomy; roll out custom lists (gifts, home vs office, seasonal).</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10h16V10"/><path d="M3 10l2-6h14l2 6a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M10 20v-5h4v5"/></svg></span><strong>Regional Retail Habits</strong><p>in markets where shoppers buy offline, link lists to in-store offers.</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></span><strong>AI Cost at Scale</strong><p>recurring price reports require multiple tool calls; price each SKU once for all watchers, script the Cashback calculation and default to weekly digests.</p></li></ul></article>
+<article class="mod span5"><header class="mod-head"><span class="mod-icon tone-purple"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/></svg></span><h3><span class="mod-num">3.</span> The Synergy</h3></header><p class="lede">ShopList extends the Shopping Assistant from a blank chat to the user’s own list, surfacing product offers instead of brand discount rates.</p><ul class="rows"><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4.500 20a7.500 7.500 0 0 1 15 0"/></svg></span><div><strong>Users</strong><p>the best products at the best bottom-line price, with less time spent researching.</p></div></li><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 5 13h6l-1 8 8-11h-6z"/></svg></span><div><strong>ShopBack</strong><p>first-party purchase intent and the habit of starting online shopping in ShopBack.</p></div></li><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.500"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg></span><div><strong>Brands</strong><p>incremental orders from new and more frequent customers.</p></div></li></ul></article>
+<article class="mod span7"><header class="mod-head"><span class="mod-icon tone-green"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></span><h3><span class="mod-num">4.</span> Measuring Success</h3></header><div class="f-cols"><span>Funnel stage</span><span>Metric</span></div><ol class="funnel"><li><span class="f-num">1</span><div class="f-body"><strong>Awareness</strong><p>Users who see ShopList in-app or are aware of feature</p><span class="f-bar" style="width: 100%"></span></div></li><li><span class="f-num">2</span><div class="f-body"><strong>Engagement</strong><p>Users adding items, opting into daily or weekly price reports, opening price reports</p><span class="f-bar" style="width: 87%"></span></div></li><li><span class="f-num">3</span><div class="f-body"><strong>Usage</strong><p>Weekly active list users; items per user, number of users with populated list</p><span class="f-bar" style="width: 74%"></span></div></li><li><span class="f-num">4</span><div class="f-body"><strong>Purchase conversion</strong><p>ShopList items bought via ShopBack</p><span class="f-bar" style="width: 61%"></span></div></li><li><span class="f-num">5</span><div class="f-body"><strong>Repeat conversion</strong><p>Buyers who buy from their list again within 90 days</p><span class="f-bar" style="width: 48%"></span></div></li></ol></article>
+</div>
+</section><section class="panel" id="shopkeeper" role="tabpanel" aria-labelledby="tab-shopkeeper" hidden>
+<div class="titleblock">
+<span class="kicker">Prototype 2</span>
+<h2>ShopKeeper: A First-Party Game to Drive Everyday Engagement</h2>
+</div>
+<a class="preview" href="https://shopback-game.vercel.app/" target="_blank" rel="noopener">
+<span class="preview-media"><img src="img/shopkeeper-preview.svg" alt="Illustration of a small shop stall with loot on its shelves, a dungeon door and a treasure chest" width="1600" height="900"></span>
+<span class="preview-body">
+<span class="preview-label">Live prototype</span>
+<span class="preview-title">ShopKeeper</span>
+<span class="preview-host">shopback-game.vercel.app</span>
+<span class="btn">View the prototype <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5H5v14h14v-5M14 4h6v6M20 4l-9 9"/></svg></span>
+</span>
+</a>
+<div class="grid">
+<article class="mod span6"><header class="mod-head"><span class="mod-icon tone-coral"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.500 20h19z"/><path d="M12 10v5M12 17.500h.01"/></svg></span><h3><span class="mod-num">1.</span> The Problem</h3></header><p class="lede">ShopBack is top of mind only when users are ready to buy, and the time between purchases goes to apps that increasingly sell as well.</p><ul class="rows"><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><div><strong>Inconsistent Engagement</strong><p>app use spikes around purchases and promo events; between them, ShopBack is rarely top of mind.</p></div></li><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><strong>Competing App Time</strong><p>The war for attention and screen share is on. Users spend their free time in mobile games and social apps such as Instagram and TikTok.</p></div></li><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v4a5 5 0 0 0 5 5h5"/><path d="M7 20v-4a5 5 0 0 1 5-5"/><path d="M14 9l3 4-3 4"/></svg></span><div><strong>Shopping and Games Are Converging</strong><p>Social apps (TikTok, Instagram, Pinduoduo) now have native shopping, while LinkedIn, Shopee, Netflix and Discord have added in-platform games.</p></div></li></ul></article>
+<article class="mod span6"><header class="mod-head"><span class="mod-icon tone-blue"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.500 10.900c.6.500 1 1.200 1 2.100h5c0-.9.400-1.600 1-2.100A6 6 0 0 0 12 3z"/></svg></span><h3><span class="mod-num">2.</span> The Solution</h3></header><p class="lede">ShopKeeper is a lightweight first-party game inside the ShopBack app that gives users a reason to return every day.</p><ul class="tiles three"><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M15.500 12h.01M18 14h.01"/></svg></span><strong>Game Core Loop</strong><p>Combines adventuring, loot collection and a store simulator.</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.600 5.600 7 7M17 17l1.400 1.400M5.600 18.400 7 17M17 7l1.400-1.400"/></svg></span><strong>Daily Loop</strong><p>five-minute sessions built around a daily dungeon and a promo calendar for selling loot. Activating a real ShopBack deal triggers a “Campaign Rush” of in-game customers.</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/></svg></span><strong>Bridge to Partners</strong><p>Playing daily unlocks real Cashback deals; later, real-world sales events can become in-game events.</p></li></ul></article>
+<article class="mod span12 hurdles"><header class="mod-head"><span class="mod-icon tone-amber"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 9.500 8l4 6 2.500-3.500L21 20z"/><path d="M14 4v4l3-1-3-1"/></svg></span><h3>Hurdles at Scale</h3></header><ul class="tiles cols3"><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l7 4V6l-7 4z"/><path d="M17 9a4 4 0 0 1 0 6M8 14v4"/></svg></span><strong>Live Ops and Content</strong><p>players need a steady content roadmap; per-market calendars with AI-assisted localization keep events relevant.</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 2 5 5.500 5 9l-2 3H9l-2-3c0-3.500 2-7 5-9z"/><circle cx="12" cy="10" r="1.800"/><path d="M9 18l-1 3M15 18l1 3M12 16v5"/></svg></span><strong>Release Speed</strong><p>build in HTML5 so content updates ship without app releases.</p></li><li><span class="tile-icon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.800 3h10.400A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.500 15h9"/></svg></span><strong>Proving Impact</strong><p>pilot in one market with a holdout group to test the lift in transactions and GMV; engagement may vary by cohort and region.</p></li></ul></article>
+<article class="mod span5"><header class="mod-head"><span class="mod-icon tone-purple"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/></svg></span><h3><span class="mod-num">3.</span> The Synergy</h3></header><p class="lede">ShopKeeper gives users a daily reason to open ShopBack, alongside the Shopping Assistant and ShopList.</p><ul class="rows"><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.500-7-10a4 4 0 0 1 7-2.500A4 4 0 0 1 19 10c0 5.500-7 10-7 10z"/></svg></span><div><strong>Users Retention</strong><p>a daily habit that surfaces deals they would otherwise miss.</p></div></li><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><strong>ShopBack App Time</strong><p>more time in the app, with a potential lift in total purchases.</p></div></li><li><span class="row-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.500"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg></span><div><strong>Engage with Brands</strong><p>once the player base is large enough, sponsored products and interstitial ads become a new channel to test.</p></div></li></ul></article>
+<article class="mod span7"><header class="mod-head"><span class="mod-icon tone-green"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></span><h3><span class="mod-num">4.</span> Measuring Success</h3></header><div class="f-cols"><span>Funnel stage</span><span>Metric</span></div><ol class="funnel"><li><span class="f-num">1</span><div class="f-body"><strong>Engagement</strong><p>Time spent in the ShopBack app and in ShopKeeper</p><span class="f-bar" style="width: 100%"></span></div></li><li><span class="f-num">2</span><div class="f-body"><strong>Frequency</strong><p>Lift in weekly sessions, players vs non-players</p><span class="f-bar" style="width: 74%"></span></div></li><li><span class="f-num">3</span><div class="f-body"><strong>Conversion</strong><p>Deals activated from the game; transactions and GMV vs holdout</p><span class="f-bar" style="width: 48%"></span></div></li></ol></article>
+</div>
+</section>
+</div>
+</main>
+<footer class="wrap foot"><p>Concept work by Derek Wong. Not an official ShopBack site.</p></footer>
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function show(id, push) {
+    var found = false;
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-tab') === id;
+      if (on) found = true;
+    });
+    if (!found) id = tabs[0].getAttribute('data-tab');
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-tab') === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('data-tab')).hidden = !on;
+    });
+    if (push) history.replaceState(null, '', '#' + id);
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(t.getAttribute('data-tab'), true); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      n.focus(); show(n.getAttribute('data-tab'), true);
+    });
+  });
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1), false); });
+  show(location.hash.slice(1), false);
+})();
+</script>
+</body>
+</html>

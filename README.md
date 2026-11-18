@@ -21,6 +21,10 @@ Interactive screens: the blank ShopList (pick a list, type to add, move cards be
 
 ShopList is designed to live inside the native ShopBack app. The home screen, tab bar, store page, Activate Cashback step, Notifications and Account screens are rebuilt in HTML from the existing ShopBack iOS UI, using screens on Mobbin as reference. ShopList takes the middle tab (the Watchlist slot); Watchlist stays reachable from Account. Store logos are plain coloured tiles, not the real logo artwork.
 
+## Prototypes hub
+
+`hub/` is a separate one-page site, a dashboard-style report on the ShopList and ShopKeeper prototypes with a preview card linking to each. It is deployed as its own Vercel project with `hub` as the root directory.
+
 ## How it is built
 
 - `design/*.dc.html` are the screen sources, exported from the design canvas.
