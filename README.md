@@ -15,7 +15,7 @@ It is a static site with no build step and no dependencies.
 5. **Save from any store:** the ShopBack browser extension's “Save to ShopList” picker, and how the item lands in the app.
 6. **Inside the ShopBack app:** the Notifications inbox with a ShopList filter, and the Account screen with ShopList entries.
 
-Interactive screens: the blank ShopList (pick a list, type to add, move cards between lists), the tutorial video widget, the Daily / Weekly report switch, the report settings and the extension's list picker.
+Interactive screens: the blank ShopList (pick a list, type to add, move cards between lists), the tutorial video (a real playable video with chapter links), the Daily / Weekly report switch, the report settings and the extension's list picker.
 
 ## Matching the ShopBack app
 
@@ -31,6 +31,7 @@ ShopList is designed to live inside the native ShopBack app. The home screen, ta
   ```
 
 - `app.js` renders the screens: `{{holes}}`, `<sc-if>`, `<sc-for>`, `<dc-import>`, click handlers and component state.
+- `media/` holds the 40-second tutorial video (`shoplist-tutorial.mp4`, 720 × 1280, compressed for the web) and its poster image.
 - `img/` holds simple product illustrations used in place of photos, and the assistant sparkle.
 - `fonts/` holds Figtree (SIL Open Font License, see `fonts/OFL.txt`).
 
