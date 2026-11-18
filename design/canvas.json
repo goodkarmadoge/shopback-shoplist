@@ -271,7 +271,7 @@
    "h": 300,
    "page": "v2",
    "radius": 20,
-   "title": "Video widget component (press Play: it runs)",
+   "title": "Video widget component (Play opens the tutorial video)",
    "w": 358,
    "x": 1880,
    "y": 5600,

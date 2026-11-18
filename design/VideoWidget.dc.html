@@ -16,11 +16,11 @@ a{color:#1D4ED8}a:hover{color:#1E3A8A}
 <div style="width: 358px; height: 300px; box-sizing: border-box; color: #1F2937; font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; gap: 10px">
 <div style="position: relative; width: 358px; height: 200px; border-radius: 18px; overflow: hidden; background: #1F2937; flex: none">
 <sc-if value="{{ isPoster }}" hint-placeholder-val="{{ true }}">
-<button aria-label="Play the 45-second ShopList tour" onClick="{{ play }}" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; padding: 18px; background: linear-gradient(135deg, #E2F2FF 0%, #ECE5FF 52%, #FFE5EC 100%); color: #1F2937; font-family: inherit; text-align: left; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer">
+<button aria-label="Play the 40-second ShopList tour" onClick="{{ play }}" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; padding: 18px; background: linear-gradient(135deg, #E2F2FF 0%, #ECE5FF 52%, #FFE5EC 100%); color: #1F2937; font-family: inherit; text-align: left; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer">
 <span style="display: flex; flex-direction: column; gap: 4px">
 <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #374151"><img src="img/spark.svg" alt="" width="14" height="14">Tutorial</span>
 <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.3px">How ShopList works</span>
-<span style="font-size: 13px; color: #374151">45 seconds · 4 chapters · captions on</span>
+<span style="font-size: 13px; color: #374151">40 seconds · 4 chapters · captions on</span>
 </span>
 <span style="display: flex; gap: 6px" aria-hidden="true">
 <span style="font-size: 12px; font-weight: 700; color: #1F2937; background: #FFFFFF; padding: 5px 10px; border-radius: 12px">🛒 Buy Now</span>
@@ -137,10 +137,10 @@ renderVals() {
 var self = this;
 var s = this.getS();
 var chs = [
-{ s: 0, at: '0:00', label: 'Add anything', cap: 'Keep track of anything you want to buy. One word is enough.' },
-{ s: 12, at: '0:12', label: 'Sorted for you', cap: 'Buy Now, Wish List and Recurring Purchases, sorted for you.' },
-{ s: 24, at: '0:24', label: 'Meet Karma', cap: 'Karma, your AI shopping assistant, watches prices and Cashback.' },
-{ s: 36, at: '0:36', label: 'Wish Jar', cap: 'Cashback from everyday buys fills a wish.' }
+{ s: 0, at: '0:00', label: 'Add anything', cap: '' },
+{ s: 10, at: '0:10', label: 'Sorted for you', cap: '' },
+{ s: 20, at: '0:20', label: 'Price check', cap: '' },
+{ s: 31, at: '0:31', label: 'Buy for less', cap: '' }
 ];
 var ci = 0;
 for (var i = 0; i < chs.length; i++) { if (s.t >= chs[i].s) ci = i; }
@@ -161,14 +161,14 @@ showCaption: s.cc && !isPoster,
 caption: chs[ci].cap,
 pct: (s.t / 45 * 100).toFixed(1),
 time: time,
-play: function () { self.play(); },
+play: function () { window.__shoplistTourStart = 0; location.hash = '#/O2Player'; },
 pause: function () { self.pause(); },
 toggleCc: function () { self.setState({ cc: !s.cc }); },
 chapters: chs.map(function (c, k) {
 var active = !isPoster && k === ci;
 return {
 at: c.at, label: c.label, active: active, inactive: !active,
-jump: function () { self.setState({ t: c.s === 0 ? 0.25 : c.s }); self.play(); }
+jump: function () { window.__shoplistTourStart = c.s; location.hash = '#/O2Player'; }
 };
 })
 };
