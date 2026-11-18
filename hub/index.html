@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShopBack Prototypes | Derek Wong</title>
+<title>Prototype Challenge: Product Lead, AI-Native (Special Projects) | Derek Wong</title>
 <meta name="description" content="Two ShopBack concept prototypes by Derek Wong: ShopList, smart lists for smart shoppers, and ShopKeeper, a first-party game to drive everyday engagement.">
 <style>
 @font-face { font-family: Figtree; font-style: normal; font-weight: 300 900; font-display: swap; src: url(fonts/figtree-latin.woff2) format('woff2'); }
@@ -12,12 +12,18 @@
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: Figtree, -apple-system, 'SF Pro Text', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.5; }
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-.hero { background: linear-gradient(160deg, #F04E23 0%, #F5704A 55%, #F99C80 100%); color: #FFFFFF; padding: 36px 0 64px; }
-.hero-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.hero h1 { margin: 0; font-size: clamp(28px, 4.5vw, 40px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
-.byline { margin: 6px 0 0; font-size: 17px; font-weight: 600; }
-.hero-mascot { flex: none; background: #FFFFFF; border-radius: 50%; padding: 6px; }
-.sheet { background: var(--bg); border-radius: 24px 24px 0 0; margin-top: -32px; padding-bottom: 32px; }
+.topbar { background: #FFFFFF; }
+.topbar-in { height: 64px; display: flex; align-items: center; }
+.topbar img { display: block; height: 30px; width: auto; }
+.hero { position: relative; overflow: hidden; background: linear-gradient(100deg, #FF4A1C 0%, #F9744E 45%, #FDA98C 78%, #F9744E 100%); color: #FFFFFF; padding: 48px 0 84px; }
+.stars { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero-in { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.hero h1 { margin: 0; font-size: clamp(30px, 5vw, 52px); font-weight: 800; letter-spacing: -0.8px; line-height: 1.08; max-width: 16em; }
+.h1-top { display: block; }
+.byline { margin: 0; display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 600; }
+.byline img { width: 64px; height: 64px; border-radius: 50%; border: 3px solid #FFFFFF; object-fit: cover; flex: none; box-shadow: 0 4px 14px rgba(27, 33, 64, 0.25); }
+.byline strong { font-weight: 800; }
+.sheet { position: relative; z-index: 1; background: var(--bg); border-radius: 24px 24px 0 0; margin-top: -32px; padding-bottom: 32px; }
 .tabs { display: flex; background: #E9EAEE; border-radius: 16px 16px 0 0; max-width: 460px; }
 .tabs button { flex: 1; min-height: 52px; border: none; background: none; border-radius: 16px 16px 0 0; font: inherit; font-size: 16px; font-weight: 600; color: var(--muted); cursor: pointer; padding: 0 12px; }
 .tabs button span { display: inline-block; padding: 6px 2px; border-bottom: 2px solid transparent; }
@@ -78,7 +84,9 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: Figtree
   .panel { padding: 16px; border-radius: 0 0 16px 16px; }
   .tabs { max-width: none; }
   .tiles.cols4, .tiles.cols3 { grid-template-columns: 1fr; }
-  .hero-mascot { width: 64px; height: 64px; }
+  .hero { padding: 32px 0 68px; }
+  .topbar-in { height: 56px; }
+  .topbar img { height: 26px; }
   .btn { width: 100%; justify-content: center; }
   .preview-body { padding: 16px; }
 }
@@ -87,13 +95,12 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: Figtree
 </style>
 </head>
 <body>
+<div class="topbar"><div class="wrap topbar-in"><img src="img/shopback-logo.png" alt="ShopBack" width="160" height="49"></div></div>
 <header class="hero">
+<svg class="stars" aria-hidden="true" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice"><g fill="#FFD84D"><path d="M1010 120c1 8 5 12 13 13-8 1-12 5-13 13-1-8-5-12-13-13 8-1 12-5 13-13z"/><path d="M1090 50c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z"/><path d="M880 210c1 7 4.500 10.500 11.500 11.500-7 1-10.500 4.500-11.500 11.500-1-7-4.500-10.500-11.500-11.500 7-1 10.500-4.500 11.500-11.500z"/><path d="M1150 190c.8 5 3 7.200 8 8-5 .8-7.200 3-8 8-.8-5-3-7.200-8-8 5-.8 7.200-3 8-8z"/></g></svg>
 <div class="wrap hero-in">
-<div>
-<h1>ShopBack Prototypes</h1>
-<p class="byline">Derek Wong</p>
-</div>
-<img class="hero-mascot" src="img/karma.svg" alt="" width="96" height="96">
+<h1><span class="h1-top">Prototype Challenge:</span> Product Lead, AI-Native (Special Projects)</h1>
+<p class="byline"><img src="img/derek.jpg" alt="Stylised portrait of Derek Wong" width="64" height="64"><span>Presented by <strong>Derek Wong</strong></span></p>
 </div>
 </header>
 <main class="sheet">
