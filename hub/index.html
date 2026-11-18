@@ -18,8 +18,8 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: Figtree
 .hero { position: relative; overflow: hidden; background: linear-gradient(100deg, #FF4A1C 0%, #F9744E 45%, #FDA98C 78%, #F9744E 100%); color: #FFFFFF; padding: 48px 0 84px; }
 .stars { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .hero-in { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
-.hero h1 { margin: 0; font-size: clamp(30px, 5vw, 52px); font-weight: 800; letter-spacing: -0.8px; line-height: 1.08; max-width: 16em; }
-.h1-top { display: block; }
+.hero h1 { margin: 0; font-size: clamp(30px, 5vw, 52px); font-weight: 800; letter-spacing: -0.8px; line-height: 1.08; }
+.h1-line { display: block; }
 .byline { margin: 0; display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 600; }
 .byline img { width: 64px; height: 64px; border-radius: 50%; border: 3px solid #FFFFFF; object-fit: cover; flex: none; box-shadow: 0 4px 14px rgba(27, 33, 64, 0.25); }
 .byline strong { font-weight: 800; }
@@ -99,7 +99,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: Figtree
 <header class="hero">
 <svg class="stars" aria-hidden="true" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice"><g fill="#FFD84D"><path d="M1010 120c1 8 5 12 13 13-8 1-12 5-13 13-1-8-5-12-13-13 8-1 12-5 13-13z"/><path d="M1090 50c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z"/><path d="M880 210c1 7 4.500 10.500 11.500 11.500-7 1-10.500 4.500-11.500 11.500-1-7-4.500-10.500-11.500-11.500 7-1 10.500-4.500 11.500-11.500z"/><path d="M1150 190c.8 5 3 7.200 8 8-5 .8-7.200 3-8 8-.8-5-3-7.200-8-8 5-.8 7.200-3 8-8z"/></g></svg>
 <div class="wrap hero-in">
-<h1><span class="h1-top">Prototype Challenge:</span> Product Lead, AI-Native (Special Projects)</h1>
+<h1><span class="h1-line">Prototype Challenge:</span> <span class="h1-line">Product Lead, AI-Native</span> <span class="h1-line">(Special Projects)</span></h1>
 <p class="byline"><img src="img/derek.jpg" alt="Stylised portrait of Derek Wong" width="64" height="64"><span>Presented by <strong>Derek Wong</strong></span></p>
 </div>
 </header>
