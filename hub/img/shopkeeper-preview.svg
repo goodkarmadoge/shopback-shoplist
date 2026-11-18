@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Illustration of a small fantasy shop stall with loot on its shelves, a dungeon door and a treasure chest">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1C1F2E"/><stop offset="1" stop-color="#2A2F4A"/></linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFB86B" stop-opacity="0.9"/><stop offset="1" stop-color="#FFB86B" stop-opacity="0"/></radialGradient>
+<linearGradient id="coin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE08A"/><stop offset="1" stop-color="#F5A623"/></linearGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<g fill="#FFFFFF" opacity="0.5"><circle cx="140" cy="110" r="3"/><circle cx="420" cy="70" r="2"/><circle cx="700" cy="130" r="2.500"/><circle cx="1010" cy="80" r="3"/><circle cx="1290" cy="140" r="2"/><circle cx="1480" cy="70" r="3"/><circle cx="260" cy="230" r="2"/><circle cx="1400" cy="260" r="2.500"/></g>
+<rect y="700" width="1600" height="200" fill="#151827"/>
+<rect y="700" width="1600" height="10" fill="#3A4066"/>
+<!-- dungeon door -->
+<circle cx="250" cy="560" r="190" fill="url(#glow)" opacity="0.35"/>
+<path d="M130 700V500a120 120 0 0 1 240 0v200z" fill="#3A4066"/>
+<path d="M160 700V505a90 90 0 0 1 180 0v195z" fill="#0E101B"/>
+<path d="M160 700V505a90 90 0 0 1 180 0v195z" fill="url(#glow)" opacity="0.35"/>
+<g stroke="#5A628F" stroke-width="6"><path d="M130 560h30M340 560h30M130 630h30M340 630h30"/></g>
+<!-- stall -->
+<rect x="560" y="330" width="26" height="370" fill="#7A4A2A"/><rect x="1014" y="330" width="26" height="370" fill="#7A4A2A"/>
+<rect x="586" y="350" width="428" height="350" fill="#22263B"/>
+<g><path d="M520 240h560l40 110H480z" fill="#F04E23"/>
+<g fill="#FFF6EA"><path d="M590 240h70l-10 110h-80z"/><path d="M730 240h70v110h-80z"/><path d="M870 240h70l10 110h-80z"/><path d="M1010 240h70l40 110h-80z"/></g>
+<g fill="#F04E23"><circle cx="520" cy="350" r="40"/><circle cx="680" cy="350" r="40"/><circle cx="840" cy="350" r="40"/><circle cx="1000" cy="350" r="40"/></g>
+<g fill="#FFF6EA"><circle cx="600" cy="350" r="40"/><circle cx="760" cy="350" r="40"/><circle cx="920" cy="350" r="40"/><circle cx="1080" cy="350" r="40"/></g>
+<rect x="480" y="345" width="640" height="8" fill="#C8201C" opacity="0"/></g>
+<rect x="610" y="470" width="380" height="12" rx="4" fill="#7A4A2A"/>
+<!-- shelf loot -->
+<g transform="translate(650 400)"><path d="M0 60 22 0l22 60-22 12z" fill="#6B4EE6"/><path d="M22 0 44 60 22 72z" fill="#4A33B8"/></g>
+<g transform="translate(760 392)"><rect x="14" y="0" width="16" height="18" fill="#D8DBE2"/><path d="M0 46a22 22 0 0 1 14-20V18h16v8a22 22 0 1 1-30 20z" fill="#3FD0A3"/><path d="M4 50h36a18 18 0 0 1-36 0z" fill="#17A67B"/></g>
+<g transform="translate(866 388)"><rect x="18" y="0" width="10" height="62" rx="3" fill="#D8DBE2"/><rect x="2" y="56" width="42" height="9" rx="4" fill="#F5A623"/><rect x="18" y="64" width="10" height="18" rx="3" fill="#7A4A2A"/></g>
+<g transform="translate(940 400)"><path d="M0 0h44v34c0 18-22 30-22 30S0 52 0 34z" fill="#3FA9FF"/><path d="M22 0h22v34c0 18-22 30-22 30z" fill="#1A6CE8"/></g>
+<!-- counter -->
+<rect x="540" y="560" width="520" height="140" rx="10" fill="#9A6238"/>
+<rect x="540" y="560" width="520" height="26" rx="10" fill="#C08552"/>
+<g fill="#7A4A2A"><rect x="600" y="610" width="10" height="90"/><rect x="760" y="610" width="10" height="90"/><rect x="920" y="610" width="10" height="90"/></g>
+<g><circle cx="700" cy="548" r="22" fill="url(#coin)"/><circle cx="745" cy="552" r="22" fill="url(#coin)"/><circle cx="722" cy="530" r="22" fill="url(#coin)"/><text x="722" y="539" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#9A5B00" text-anchor="middle">$</text></g>
+<g transform="translate(880 500)"><rect x="0" y="20" width="90" height="42" rx="6" fill="#FFF6EA"/><rect x="10" y="0" width="70" height="26" rx="6" fill="#E5322D"/><text x="45" y="19" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">OPEN</text></g>
+<!-- chest -->
+<circle cx="1330" cy="610" r="150" fill="url(#glow)" opacity="0.3"/>
+<g transform="translate(1230 560)"><rect x="0" y="50" width="200" height="90" rx="10" fill="#9A6238"/><path d="M0 60a100 60 0 0 1 200 0z" fill="#C08552"/><rect x="0" y="54" width="200" height="14" fill="#F5A623"/><rect x="88" y="48" width="24" height="34" rx="5" fill="#FFE08A"/><circle cx="60" cy="40" r="16" fill="url(#coin)"/><circle cx="100" cy="28" r="16" fill="url(#coin)"/><circle cx="140" cy="40" r="16" fill="url(#coin)"/></g>
+<!-- campaign rush tag -->
+<g transform="translate(1150 170)"><rect width="300" height="64" rx="32" fill="#6B4EE6"/><path d="M40 14 26 36h12l-4 16 16-24H38z" fill="#FFE08A"/><text x="64" y="41" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">Campaign Rush</text></g>
+</svg>
